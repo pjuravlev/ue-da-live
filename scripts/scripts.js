@@ -230,3 +230,5 @@ loadPage();
   // eslint-disable-next-line import/no-unresolved
   if (exp) import('https://da.live/nx/public/plugins/exp/exp.js');
 }());
+
+export const NX_ORIGIN = 'TEST_IGNORE_BUG';
