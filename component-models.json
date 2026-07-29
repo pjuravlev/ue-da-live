@@ -79,6 +79,18 @@
     ]
   },
   {
+    "id": "button",
+    "fields": [
+      {
+        "component": "text",
+        "name": "label",
+        "label": "Label",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -277,52 +289,6 @@
         "name": "posterImage",
         "label": "Poster Image",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "button",
-    "fields": [
-      {
-        "component": "text",
-        "name": "label",
-        "label": "Label",
-        "valueType": "string",
-		"required": true
-      },
-	  {
-		"component": "select",
-		"label": "Type",
-		"name": "type",
-		"valueType": "string",
-		"options": [
-			{ "name": "Link Primary", "value": "link-primary" },
-			{ "name": "Link Secondary", "value": "link-secondary" }
-		]      
-	  },
-      {
-        "component": "text",
-        "name": "size",
-        "label": "Size",
-        "valueType": "string"
-      },      
-	  {
-        "component": "boolean",
-        "name": "disabled",
-        "label": "Disabled",
-        "valueType": "boolean"
-      },
-      {
-        "component": "boolean",
-        "name": "showLeftIcon",
-        "label": "Show Left Icon",
-        "valueType": "boolean"
-      },
-      {
-        "component": "boolean",
-        "name": "showRightIcon",
-        "label": "Show Right Icon",
-        "valueType": "boolean"
       }
     ]
   }

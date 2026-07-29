@@ -1,0 +1,37 @@
+{
+  "definitions": [
+	{
+		"title": "Button",
+		"id": "button",
+		"model": "button",
+		"plugins": {
+			"da": {
+				"name": "video",
+				"rows": 1,
+				"columns": 1,
+				"fields": [
+					{      
+						"name": "label",
+						"selector": "div>div>picture>img[src]"
+					}
+				]
+			}
+		}
+	}
+  ],
+  "models": [
+    {
+      "id": "button",
+      "fields": [
+      {
+        "component": "text",
+        "name": "label",
+        "label": "Label",
+        "valueType": "string",
+		"required": true
+      }
+      ]
+    }
+  ],
+  "filters": []
+}
