@@ -126,7 +126,8 @@
                 {
                   "name": "text",
                   "selector": "div:nth-child(2)"
-                }
+                },
+				
               ]
             }
           }
@@ -371,7 +372,43 @@
               ]
             }
           }
-        }
+        },
+		{
+			"title": "Button",
+			"id": "cta-button",
+			"model": "button",
+			"plugins": {
+				"da": {
+					"name": "video",
+					"rows": 1,
+					"columns": 1,
+					"fields": [
+					{      
+						"name": "label",
+						"selector": "div>div>picture>img[src]"
+					},
+					{		
+						"name": "type",
+						"selector": "div>div>picture>img[src]"
+					},
+					{
+						"name": "size",
+						"selector": "div>div>picture>img[src]"
+					},      
+					{
+						"name": "disabled",
+						"selector": "div>div>picture>img[src]"
+					},
+					{
+						"name": "showLeftIcon",
+						"selector": "div>div>picture>img[src]"
+					},
+					{
+						"name": "showRightIcon",
+						"selector": "div>div>picture>img[src]"
+				}
+			]
+		}
       ]
     }
   ]

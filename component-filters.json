@@ -23,7 +23,8 @@
       "table",
       "text",
       "video",
-      "product-recommendations"
+      "product-recommendations",
+	  "cta-button"
     ]
   },
   {
@@ -36,6 +37,12 @@
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "card",
+    "components": [
+      "cta-button"
     ]
   },
   {
