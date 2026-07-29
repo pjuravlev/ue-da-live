@@ -8,6 +8,7 @@
   {
     "id": "section",
     "components": [
+      "buttons",
       "accordion",
       "cards",
       "carousel",
@@ -30,6 +31,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "buttons",
+    "components": [
+      "button"
     ]
   },
   {

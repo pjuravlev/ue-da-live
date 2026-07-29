@@ -79,6 +79,27 @@
     ]
   },
   {
+    "id": "button",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "value": "",
+        "label": "Label",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

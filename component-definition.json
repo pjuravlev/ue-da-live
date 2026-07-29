@@ -95,6 +95,17 @@
           }
         },
         {
+          "title": "Buttons",
+          "id": "Buttons",
+          "model": "buttons",
+          "filter": "buttons"
+        },
+        {
+          "title": "Button",
+          "id": "button",
+          "model": "button"
+        },
+        {
           "title": "Cards",
           "id": "cards",
           "model": "cards",
