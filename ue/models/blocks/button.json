@@ -6,13 +6,13 @@
 		"model": "button",
 		"plugins": {
 			"da": {
-				"name": "video",
+				"name": "button",
 				"rows": 1,
 				"columns": 1,
 				"fields": [
 					{      
 						"name": "label",
-						"selector": "div>div>picture>img[src]"
+						"selector": "div:nth-child(1)"
 					}
 				]
 			}
