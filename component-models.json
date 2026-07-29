@@ -287,15 +287,8 @@
         "component": "text",
         "name": "label",
         "label": "Label",
-        "valueType": "string"
-		"required": true
-      },
-      {
-        "component": "text",
-        "name": "videoUrl",
-        "label": "Video URL",
         "valueType": "string",
-        "required": true
+		"required": true
       },
 	  {
 		"component": "select",

@@ -126,8 +126,7 @@
                 {
                   "name": "text",
                   "selector": "div:nth-child(2)"
-                },
-				
+                }				
               ]
             }
           }
@@ -406,10 +405,13 @@
 					{
 						"name": "showRightIcon",
 						"selector": "div>div>picture>img[src]"
-				}
-			]
+					}
+					
+				]
+			}
 		}
-      ]
-    }
+		}
   ]
+	}
+]
 }
