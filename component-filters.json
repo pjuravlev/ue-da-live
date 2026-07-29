@@ -9,6 +9,7 @@
     "id": "section",
     "components": [
       "accordion",
+      "button",
       "cards",
       "carousel",
       "columns",
@@ -35,7 +36,8 @@
   {
     "id": "cards",
     "components": [
-      "card"
+      "card",
+      "button"
     ]
   },
   {
