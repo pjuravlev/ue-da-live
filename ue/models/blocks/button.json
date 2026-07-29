@@ -13,6 +13,26 @@
 					{      
 						"name": "label",
 						"selector": "div:nth-child(1)"
+					},
+					{		
+						"name": "type",
+						"selector": "div:nth-child(2)"
+					},
+					{
+						"name": "size",
+						"selector": "div:nth-child(3)"
+					},      
+					{
+						"name": "disabled",
+						"selector": "div:nth-child(4)"
+					},
+					{
+						"name": "showLeftIcon",
+						"selector": "div:nth-child(5)"
+					},
+					{
+						"name": "showRightIcon",
+						"selector": "div:nth-child(6)"
 					}
 				]
 			}
@@ -29,6 +49,40 @@
         "label": "Label",
         "valueType": "string",
 		"required": true
+      },
+	  {
+		"component": "multiselect",
+		"label": "Type",
+		"name": "type",
+		"valueType": "string",
+		"options": [
+			{ "name": "Link Primary", "value": "link-primary" },
+			{ "name": "Link Secondary", "value": "link-secondary" }
+		]      
+	  },
+      {
+        "component": "text",
+        "name": "size",
+        "label": "Size",
+        "valueType": "string"
+      },      
+	  {
+        "component": "boolean",
+        "name": "disabled",
+        "label": "Disabled",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "showLeftIcon",
+        "label": "Show Left Icon",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "showRightIcon",
+        "label": "Show Right Icon",
+        "valueType": "boolean"
       }
       ]
     }
