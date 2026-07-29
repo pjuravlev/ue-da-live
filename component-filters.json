@@ -33,6 +33,12 @@
     ]
   },
   {
+    "id": "buttons",
+    "components": [
+      "button"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
