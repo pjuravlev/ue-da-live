@@ -374,7 +374,7 @@
         },
 		{
 			"title": "Button",
-			"id": "cta-button",
+			"id": "button",
 			"model": "button",
 			"plugins": {
 				"da": {

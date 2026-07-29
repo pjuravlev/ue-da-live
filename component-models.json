@@ -281,7 +281,7 @@
     ]
   },
   {
-    "id": "cta-button",
+    "id": "button",
     "fields": [
       {
         "component": "text",

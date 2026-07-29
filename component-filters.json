@@ -42,7 +42,7 @@
   {
     "id": "card",
     "components": [
-      "cta-button"
+      "button"
     ]
   },
   {
