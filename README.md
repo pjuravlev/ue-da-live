@@ -22,3 +22,11 @@ This specific repo has been _slightly_ modified to be compatible with DA's live 
 1. Start the AEM CLI: `aem up`.
 1. Open the `{repo}` folder in your favorite code editor and buil something.
 1. **Recommended:** Install common npm packages like linting and testing: `npm i`.
+
+
+
+----------------------------------------------------------------
+### UE odel Definitions, Fields, and Component Types Build
+npm i npm-run-all -g
+npm install -g merge-json-cli
+npm run build:json
