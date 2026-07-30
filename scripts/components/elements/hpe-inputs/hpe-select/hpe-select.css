@@ -1,0 +1,152 @@
+.hpe-select {
+  display: block;
+  width: 100%;
+  max-width: 352px;
+}
+
+.hpe-select__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xsmall, 8px);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.hpe-select__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: var(--spacing-3xsmall, 8px);
+  position: relative;
+}
+
+.hpe-select__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-hair, 1px);
+  width: 100%;
+}
+
+.hpe-select__label-text {
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-disclaimer-fontsize, 14px);
+  font-weight: var(--paragraph-disclaimer-fontweight, 400);
+  line-height: var(--paragraph-disclaimer-lineheight, 20px);
+  letter-spacing: var(--paragraph-disclaimer-letterspacing, 0);
+  color: var(--hpe-web-color-text-default, #3e4550);
+  margin: 0;
+}
+
+.hpe-select__required-indicator {
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-disclaimer-fontsize, 14px);
+  font-weight: var(--paragraph-disclaimer-fontweight, 400);
+  line-height: var(--paragraph-disclaimer-lineheight, 20px);
+  letter-spacing: var(--paragraph-disclaimer-letterspacing, 0);
+  color: var(--hpe-web-color-text-critical, #cc1f1a);
+  margin: 0;
+}
+
+.hpe-select__field {
+  border: 1px solid var(--hpe-web-color-border-default, #b1b9be);
+  outline: none;
+  background: transparent;
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-small-body-copy-fontsize, 16px);
+  font-weight: var(--paragraph-small-body-copy-fontweight, 400);
+  line-height: var(--paragraph-small-body-copy-lineheight, 24px);
+  letter-spacing: var(--paragraph-small-body-copy-letterspacing, 0);
+  color: var(--hpe-web-color-text-default, #3e4550);
+  padding: var(--spacing-xxsmall, 12px) var(--spacing-small, 24px);
+  padding-right: calc(var(--spacing-small, 24px) + 28px);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  min-height: 56px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.hpe-select__field:disabled {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.hpe-select__field:focus {
+  outline: none;
+}
+
+.hpe-select__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--hpe-web-color-text-default, #3e4550);
+  pointer-events: none;
+  transition: transform 150ms ease;
+  position: absolute;
+  right: var(--spacing-small, 24px);
+  bottom: 20px;
+}
+
+.hpe-select--typing .hpe-select__field {
+  border-color: var(--hpe-web-color-border-selected, #006750);
+}
+
+.hpe-select--complete .hpe-select__field {
+  border-color: var(--hpe-web-color-border-strong, #535c66);
+}
+
+.hpe-select--error .hpe-select__field {
+  border-color: var(--hpe-web-color-border-critical, #cc1f1a);
+}
+
+.hpe-select--error .hpe-select__label-text,
+.hpe-select--error .hpe-select__required-indicator,
+.hpe-select--error .hpe-select__field,
+.hpe-select--error .hpe-select__icon,
+.hpe-select--error .hpe-select__description-text {
+  color: var(--hpe-web-color-text-critical, #cc1f1a);
+}
+
+.hpe-select--typing .hpe-select__field,
+.hpe-select--complete .hpe-select__field,
+.hpe-select--typing .hpe-select__icon,
+.hpe-select--complete .hpe-select__icon {
+  color: var(--hpe-web-color-text-strong, #292d3a);
+}
+
+.hpe-select--typing .hpe-select__icon {
+  transform: rotate(180deg);
+}
+
+.hpe-select--disabled .hpe-select__field {
+  border-color: var(--hpe-web-color-border-weak, #d4d8db);
+}
+
+.hpe-select__description {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hpe-select__description-text {
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-disclaimer-fontsize, 14px);
+  font-weight: var(--paragraph-disclaimer-fontweight, 400);
+  line-height: var(--paragraph-disclaimer-lineheight, 20px);
+  letter-spacing: var(--paragraph-disclaimer-letterspacing, 0);
+  color: var(--hpe-web-color-text-default, #3e4550);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.hpe-select--disabled .hpe-select__label-text,
+.hpe-select--disabled .hpe-select__required-indicator,
+.hpe-select--disabled .hpe-select__field,
+.hpe-select--disabled .hpe-select__icon,
+.hpe-select--disabled .hpe-select__description-text {
+  color: var(--hpe-web-color-text-disabled, rgba(0, 0, 0, 0.24));
+}

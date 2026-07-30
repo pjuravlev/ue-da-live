@@ -1,0 +1,1 @@
+{"version":3,"file":"hpe-horizontal-rule.d.ts","sourceRoot":"","sources":["../../../elements/hpe-horizontal-rule/hpe-horizontal-rule.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAQ,MAAM,KAAK,CAAC;AAIvC;;;;;;;GAOG;AACH,qBACa,iBAAkB,SAAQ,UAAU;IAC/C,OAAgB,MAAM,0BAAU;IAEvB,MAAM;CAGhB;AAED,OAAO,CAAC,MAAM,CAAC;IACb,UAAU,qBAAqB;QAC7B,qBAAqB,EAAE,iBAAiB,CAAC;KAC1C;CACF"}

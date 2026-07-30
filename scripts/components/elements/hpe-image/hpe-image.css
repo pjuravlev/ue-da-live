@@ -1,0 +1,60 @@
+.hpe-image {
+  --hpe-image-background: var(
+    --image-background,
+    var(--hpe-web-color-transparent)
+  );
+  display: block;
+}
+
+.hpe-image__container {
+  position: relative;
+  width: 100%;
+  background-color: var(--hpe-image-background);
+  overflow: hidden;
+}
+
+.hpe-image__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 16:9 aspect ratio */
+.hpe-image--16-9 .hpe-image__container {
+  aspect-ratio: 16 / 9;
+}
+
+/* 4:3 aspect ratio (default) */
+.hpe-image--4-3 .hpe-image__container {
+  aspect-ratio: 4 / 3;
+}
+
+/* 1:1 aspect ratio (square) */
+.hpe-image--1-1 .hpe-image__container {
+  aspect-ratio: 1 / 1;
+}
+
+/* 9:16 aspect ratio (tall) */
+.hpe-image--9-16 .hpe-image__container {
+  aspect-ratio: 9 / 16;
+}
+
+/* 3:4 aspect ratio (tall) */
+.hpe-image--3-4 .hpe-image__container {
+  aspect-ratio: 3 / 4;
+}
+
+/* 18:5 aspect ratio (ultra-wide) */
+.hpe-image--18-5 .hpe-image__container {
+  aspect-ratio: 18 / 5;
+}
+
+/* Slot/fallback content helper */
+.hpe-image__fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

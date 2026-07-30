@@ -262,3 +262,10 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+
+.cards.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  gap:30px;
+}

@@ -1,0 +1,102 @@
+.hpe-carousel {
+  --hpe-carousel-stack-gap: 40px;
+  --hpe-carousel-controls-gap: 16px;
+  --hpe-carousel-slide-gap: 0px;
+  --hpe-carousel-nav-size: 56px;
+  --hpe-carousel-nav-rest-background: #535c66;
+  --hpe-carousel-nav-disabled-background: #b4b6ba;
+  --hpe-carousel-nav-icon-color: #ffffff;
+  --hpe-carousel-slide-count-color: #606a70;
+  display: block;
+  width: 100%;
+}
+
+.hpe-carousel__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--hpe-carousel-stack-gap);
+  width: 100%;
+}
+
+.hpe-carousel__slides {
+  display: flex;
+  align-items: center;
+  gap: var(--hpe-carousel-slide-gap);
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hpe-carousel__slides::-webkit-scrollbar {
+  display: none;
+}
+
+.hpe-carousel__slide {
+  flex: 0 0 var(--hpe-carousel-slide-width, 100%);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.hpe-carousel__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--hpe-carousel-controls-gap);
+}
+
+.hpe-carousel__slide-count {
+  color: var(--hpe-carousel-slide-count-color);
+  font-family: var(--heading-font, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.hpe-carousel__nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--hpe-carousel-nav-size);
+  height: var(--hpe-carousel-nav-size);
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background: var(--hpe-carousel-nav-rest-background);
+  color: var(--hpe-carousel-nav-icon-color);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.hpe-carousel__nav-button:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.hpe-carousel__nav-button:disabled {
+  background: var(--hpe-carousel-nav-disabled-background);
+  cursor: not-allowed;
+}
+
+.hpe-carousel__nav-button svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 766px) {
+  .hpe-carousel {
+    --hpe-carousel-controls-gap: 12px;
+    --hpe-carousel-nav-size: 40px;
+  }
+
+  .hpe-carousel__nav-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}

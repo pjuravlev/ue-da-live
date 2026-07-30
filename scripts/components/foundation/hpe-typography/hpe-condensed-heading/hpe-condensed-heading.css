@@ -1,0 +1,119 @@
+.hpe-condensed-heading {
+  color: var(--hpe-condensed-heading-color, var(--hpe-web-color-text-strong));
+  font-family: var(
+    --hpe-condensed-heading-font-family,
+    var(--hpe-web-base-font-family-condensed),
+    "HPE Graphik",
+    sans-serif
+  );
+  display: block;
+}
+
+.hpe-condensed-heading__heading {
+  margin: 0;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.hpe-condensed-heading--display-bold .hpe-condensed-heading__heading {
+  font-size: var(--hpe-web-heading-h1-large-condensed-bold-font-size);
+  font-weight: var(--hpe-web-heading-h1-large-condensed-bold-font-weight);
+  line-height: var(--hpe-web-heading-h1-large-condensed-bold-line-height);
+  letter-spacing: var(--hpe-web-heading-h1-large-condensed-bold-letter-spacing);
+}
+
+.hpe-condensed-heading--display-regular .hpe-condensed-heading__heading {
+  font-size: var(--hpe-web-heading-h1-large-condensed-medium-font-size);
+  font-weight: var(--hpe-web-heading-h1-large-condensed-medium-font-weight);
+  line-height: var(--hpe-web-heading-h1-large-condensed-medium-line-height);
+  letter-spacing: var(
+    --hpe-web-heading-h1-large-condensed-medium-letter-spacing
+  );
+}
+
+.hpe-condensed-heading--display-light .hpe-condensed-heading__heading {
+  font-size: var(--hpe-web-heading-h1-large-condensed-medium-font-size);
+  font-weight: var(--hpe-web-heading-h1-large-condensed-light-font-weight);
+  line-height: var(--hpe-web-heading-h1-large-condensed-medium-line-height);
+  letter-spacing: var(
+    --hpe-web-heading-h1-large-condensed-medium-letter-spacing
+  );
+}
+
+.hpe-condensed-heading--xl-bold .hpe-condensed-heading__heading {
+  font-size: var(--hpe-web-heading-h1-condensed-bold-font-size);
+  font-weight: var(--hpe-web-heading-h1-condensed-bold-font-weight);
+  line-height: var(--hpe-web-heading-h1-condensed-bold-line-height);
+  letter-spacing: var(--hpe-web-heading-h1-condensed-bold-letter-spacing);
+}
+
+.hpe-condensed-heading--xl-regular .hpe-condensed-heading__heading {
+  font-size: var(--hpe-web-heading-h1-condensed-medium-font-size);
+  font-weight: var(--hpe-web-heading-h1-condensed-medium-font-weight);
+  line-height: var(--hpe-web-heading-h1-condensed-medium-line-height);
+  letter-spacing: var(--hpe-web-heading-h1-condensed-medium-letter-spacing);
+}
+
+.hpe-condensed-heading--xl-light .hpe-condensed-heading__heading {
+  font-size: var(--hpe-web-heading-h1-condensed-medium-font-size);
+  font-weight: var(--hpe-web-heading-h1-condensed-light-font-weight);
+  line-height: var(--hpe-web-heading-h1-condensed-medium-line-height);
+  letter-spacing: var(--hpe-web-heading-h1-condensed-medium-letter-spacing);
+}
+
+.hpe-condensed-heading--lg-bold .hpe-condensed-heading__heading {
+  font-size: var(
+    --hpe-web-heading-h2-condensed-bold-font-size,
+    var(--hpe-web-heading-h1-condensed-bold-font-size)
+  );
+  font-weight: var(
+    --hpe-web-heading-h2-condensed-bold-font-weight,
+    var(--hpe-web-heading-h1-condensed-bold-font-weight)
+  );
+  line-height: var(
+    --hpe-web-heading-h2-condensed-bold-line-height,
+    var(--hpe-web-heading-h1-condensed-bold-line-height)
+  );
+  letter-spacing: var(
+    --hpe-web-heading-h2-condensed-bold-letter-spacing,
+    var(--hpe-web-heading-h1-condensed-bold-letter-spacing)
+  );
+}
+
+.hpe-condensed-heading--lg-regular .hpe-condensed-heading__heading {
+  font-size: var(
+    --hpe-web-heading-h2-condensed-medium-font-size,
+    var(--hpe-web-heading-h1-condensed-medium-font-size)
+  );
+  font-weight: var(
+    --hpe-web-heading-h2-condensed-medium-font-weight,
+    var(--hpe-web-heading-h1-condensed-medium-font-weight)
+  );
+  line-height: var(
+    --hpe-web-heading-h2-condensed-medium-line-height,
+    var(--hpe-web-heading-h1-condensed-medium-line-height)
+  );
+  letter-spacing: var(
+    --hpe-web-heading-h2-condensed-medium-letter-spacing,
+    var(--hpe-web-heading-h1-condensed-medium-letter-spacing)
+  );
+}
+
+.hpe-condensed-heading--lg-light .hpe-condensed-heading__heading {
+  font-size: var(
+    --hpe-web-heading-h2-condensed-medium-font-size,
+    var(--hpe-web-heading-h1-condensed-medium-font-size)
+  );
+  font-weight: var(
+    --hpe-web-heading-h2-condensed-light-font-weight,
+    var(--hpe-web-heading-h1-condensed-light-font-weight)
+  );
+  line-height: var(
+    --hpe-web-heading-h2-condensed-medium-line-height,
+    var(--hpe-web-heading-h1-condensed-medium-line-height)
+  );
+  letter-spacing: var(
+    --hpe-web-heading-h2-condensed-medium-letter-spacing,
+    var(--hpe-web-heading-h1-condensed-medium-letter-spacing)
+  );
+}

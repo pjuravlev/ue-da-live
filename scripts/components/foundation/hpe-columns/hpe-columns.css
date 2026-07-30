@@ -1,0 +1,106 @@
+.hpe-columns {
+  --hpe-columns-gap-horizontal: var(--hpe-web-spacing-large);
+  --hpe-columns-gap-vertical: var(--hpe-web-spacing-small);
+  display: block;
+  width: 100%;
+}
+
+.hpe-columns__columns {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hpe-columns__column {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.hpe-columns__column > * {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.hpe-columns--horizontal .hpe-columns__columns {
+  display: grid;
+  gap: var(--hpe-columns-gap-horizontal);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hpe-columns--reverse.hpe-columns--horizontal .hpe-columns__column--1 {
+  order: 5;
+}
+
+.hpe-columns--reverse.hpe-columns--horizontal .hpe-columns__column--2 {
+  order: 4;
+}
+
+.hpe-columns--reverse.hpe-columns--horizontal .hpe-columns__column--3 {
+  order: 3;
+}
+
+.hpe-columns--reverse.hpe-columns--horizontal .hpe-columns__column--4 {
+  order: 2;
+}
+
+.hpe-columns--reverse.hpe-columns--horizontal .hpe-columns__column--5 {
+  order: 1;
+}
+
+.hpe-columns--vertical .hpe-columns__columns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hpe-columns-gap-vertical);
+}
+
+.hpe-columns--reverse.hpe-columns--vertical .hpe-columns__columns {
+  flex-direction: column-reverse;
+}
+
+.hpe-columns--vertical .hpe-columns__column {
+  width: 100%;
+}
+
+.hpe-columns--1.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.hpe-columns--2.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hpe-columns--3.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hpe-columns--4.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hpe-columns--5.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.hpe-columns--40-60.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: minmax(0, 40fr) minmax(0, 60fr);
+}
+
+.hpe-columns--60-40.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: minmax(0, 60fr) minmax(0, 40fr);
+}
+
+.hpe-columns--33-66.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: minmax(0, 33fr) minmax(0, 66fr);
+}
+
+.hpe-columns--66-33.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: minmax(0, 66fr) minmax(0, 33fr);
+}
+
+.hpe-columns--20-80.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: minmax(0, 20fr) minmax(0, 80fr);
+}
+
+.hpe-columns--80-20.hpe-columns--horizontal .hpe-columns__columns {
+  grid-template-columns: minmax(0, 80fr) minmax(0, 20fr);
+}

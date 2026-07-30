@@ -1,0 +1,40 @@
+.hpe-section {
+  --hpe-section-inline-padding: var(--hpe-web-spacing-4xlarge);
+  --hpe-section-block-padding: var(--hpe-web-spacing-xxlarge);
+  --hpe-section-max-width: 1600px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--hpe-section-block-padding) var(--hpe-section-inline-padding);
+  background: var(--hpe-web-color-background-default);
+}
+
+.hpe-section__container {
+  width: 100%;
+  max-width: var(--hpe-section-max-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hpe-web-spacing-large);
+}
+
+.hpe-section--none {
+  padding: 0;
+}
+
+.hpe-section--none .hpe-section__container {
+  max-width: none;
+}
+
+.hpe-section--top {
+  padding-bottom: 0;
+}
+
+.hpe-section--bottom {
+  padding-top: 0;
+}
+
+.hpe-section--left-right-only {
+  padding-top: 0;
+  padding-bottom: 0;
+}

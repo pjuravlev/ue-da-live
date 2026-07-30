@@ -1,0 +1,17 @@
+.hpe-button-group {
+  --hpe-button-group-spacing: var(--spacing-medium, 16px);
+  display: flex;
+  gap: var(--hpe-button-group-spacing);
+}
+
+.hpe-button-group--horizontal {
+  flex-direction: row;
+  align-items: center;
+  width: max-content;
+}
+
+.hpe-button-group--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+}
