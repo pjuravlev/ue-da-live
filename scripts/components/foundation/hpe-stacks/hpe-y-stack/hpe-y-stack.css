@@ -1,0 +1,29 @@
+.hpe-y-stack {
+  --hpe-stack-gap-xs: var(--hpe-web-spacing-xsmall, 1rem);
+  --hpe-stack-gap-sm: var(--hpe-web-spacing-small, 1.5rem);
+  --hpe-stack-gap-md: var(--hpe-web-spacing-medium, 2rem);
+  --hpe-stack-gap-lg: var(--hpe-web-spacing-large, 2.5rem);
+  display: block;
+  width: 100%;
+}
+
+.hpe-y-stack__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  gap: var(--hpe-stack-gap-xs);
+}
+
+.hpe-y-stack--sm .hpe-y-stack__stack {
+  gap: var(--hpe-stack-gap-sm);
+}
+
+.hpe-y-stack--md .hpe-y-stack__stack {
+  gap: var(--hpe-stack-gap-md);
+}
+
+.hpe-y-stack--lg .hpe-y-stack__stack {
+  gap: var(--hpe-stack-gap-lg);
+}

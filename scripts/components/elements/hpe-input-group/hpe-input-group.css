@@ -1,0 +1,20 @@
+.hpe-input-group {
+  --hpe-input-group-horizontal-spacing: var(--hpe-web-spacing-large);
+  --hpe-input-group-vertical-spacing: var(--hpe-web-spacing-xsmall);
+  display: flex;
+}
+
+.hpe-input-group--horizontal {
+  flex-direction: row;
+  gap: var(--hpe-input-group-horizontal-spacing);
+  flex-wrap: wrap;
+  align-items: center;
+  width: max-content;
+}
+
+.hpe-input-group--vertical {
+  flex-direction: column;
+  gap: var(--hpe-input-group-vertical-spacing);
+  align-items: flex-start;
+  width: max-content;
+}

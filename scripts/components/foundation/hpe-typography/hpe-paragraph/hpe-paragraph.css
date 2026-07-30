@@ -1,0 +1,38 @@
+.hpe-paragraph {
+  color: var(--hpe-paragraph-color, var(--hpe-web-color-text-default));
+  font-family: var(--hpe-paragraph-font-family, "HPE Graphik", sans-serif);
+  display: block;
+}
+
+.hpe-paragraph__paragraph {
+  margin: 0;
+  color: inherit;
+}
+
+.hpe-paragraph--lg .hpe-paragraph__paragraph {
+  font-size: var(--hpe-web-paragraph-large-body-copy-font-size);
+  font-weight: var(--hpe-web-paragraph-large-body-copy-font-weight);
+  line-height: var(--hpe-web-paragraph-large-body-copy-line-height);
+  letter-spacing: var(--hpe-web-paragraph-large-body-copy-letter-spacing);
+}
+
+.hpe-paragraph--md .hpe-paragraph__paragraph {
+  font-size: var(--hpe-web-paragraph-body-copy-font-size);
+  font-weight: var(--hpe-web-paragraph-body-copy-font-weight);
+  line-height: var(--hpe-web-paragraph-body-copy-line-height);
+  letter-spacing: var(--hpe-web-paragraph-body-copy-letter-spacing);
+}
+
+.hpe-paragraph--sm .hpe-paragraph__paragraph {
+  font-size: var(--hpe-web-paragraph-small-body-copy-font-size);
+  font-weight: var(--hpe-web-paragraph-small-body-copy-font-weight);
+  line-height: var(--hpe-web-paragraph-small-body-copy-line-height);
+  letter-spacing: var(--hpe-web-paragraph-small-body-copy-letter-spacing);
+}
+
+.hpe-paragraph--disclaimer .hpe-paragraph__paragraph {
+  font-size: var(--hpe-web-paragraph-disclaimer-font-size);
+  font-weight: var(--hpe-web-paragraph-disclaimer-font-weight);
+  line-height: var(--hpe-web-paragraph-disclaimer-line-height);
+  letter-spacing: var(--hpe-web-paragraph-disclaimer-letter-spacing);
+}

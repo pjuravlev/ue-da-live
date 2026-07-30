@@ -1,0 +1,44 @@
+// Barrel export — add component re-exports here as they are created.
+export { HpeColumns } from "./foundation/hpe-columns/index.js";
+export { HpeSection } from "./foundation/hpe-section/index.js";
+export { HpeXStack, HpeYStack } from "./foundation/hpe-stacks/index.js";
+export {
+  HpeCondensedHeading,
+  HpeParagraph,
+  HpeHeading,
+} from "./foundation/hpe-typography/index.js";
+
+export {
+  HpeAccordion,
+  HpeAccordionItem,
+} from "./elements/hpe-accordion/index.js";
+export { HpeAgenda, HpeAgendaRow } from "./elements/hpe-agenda/index.js";
+export { HpeButton } from "./elements/hpe-button/index.js";
+export { HpeButtonGroup } from "./elements/hpe-button-group/index.js";
+export { HpeCard } from "./elements/hpe-card/index.js";
+export { HpeCarousel } from "./elements/hpe-carousel/index.js";
+export { HpeForm } from "./elements/hpe-form/index.js";
+export { HpeHorizontalRule } from "./elements/hpe-horizontal-rule/index.js";
+export { HpeImage } from "./elements/hpe-image/index.js";
+export { HpeInputGroup } from "./elements/hpe-input-group/index.js";
+export {
+  HpeCheckbox,
+  HpeRadio,
+  HpeSelect,
+  HpeInput,
+  HpeTextarea,
+} from "./elements/hpe-inputs/index.js";
+export { HpeList, HpeListItem } from "./elements/hpe-list/index.js";
+export { HpePullQuote } from "./elements/hpe-pull-quote/index.js";
+export {
+  HpeTab,
+  HpeTabPanel,
+  HpeTabGroup,
+} from "./elements/hpe-tab-group/index.js";
+export {
+  HpeTable,
+  HpeTableHeaderRow,
+  HpeTableHeaderCell,
+  HpeTableBodyRow,
+  HpeTableBodyCell,
+} from "./elements/hpe-table/index.js";

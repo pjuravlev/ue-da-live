@@ -1,0 +1,145 @@
+.hpe-textarea {
+  display: block;
+  width: 100%;
+  max-width: 352px;
+}
+
+.hpe-textarea__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xsmall, 8px);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.hpe-textarea__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: var(--spacing-3xsmall, 8px);
+}
+
+.hpe-textarea__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-hair, 1px);
+  width: 100%;
+}
+
+.hpe-textarea__label-text {
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-disclaimer-fontsize, 14px);
+  font-weight: var(--paragraph-disclaimer-fontweight, 400);
+  line-height: var(--paragraph-disclaimer-lineheight, 20px);
+  letter-spacing: var(--paragraph-disclaimer-letterspacing, 0);
+  color: var(--hpe-web-color-text-default, #3e4550);
+  margin: 0;
+}
+
+.hpe-textarea__required-indicator {
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-disclaimer-fontsize, 14px);
+  font-weight: var(--paragraph-disclaimer-fontweight, 400);
+  line-height: var(--paragraph-disclaimer-lineheight, 20px);
+  letter-spacing: var(--paragraph-disclaimer-letterspacing, 0);
+  color: var(--hpe-web-color-text-critical, #cc1f1a);
+  margin: 0;
+}
+
+.hpe-textarea__field {
+  border: 1px solid var(--hpe-web-color-border-default, #b1b9be);
+  outline: none;
+  background: transparent;
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-small-body-copy-fontsize, 16px);
+  font-weight: var(--paragraph-small-body-copy-fontweight, 400);
+  line-height: var(--paragraph-small-body-copy-lineheight, 24px);
+  letter-spacing: var(--paragraph-small-body-copy-letterspacing, 0);
+  color: var(--hpe-web-color-text-default, #3e4550);
+  width: 100%;
+  min-height: 128px;
+  padding: var(--spacing-small, 24px);
+  box-sizing: border-box;
+  resize: vertical;
+  display: block;
+}
+
+.hpe-textarea__field::placeholder {
+  color: var(--hpe-web-color-text-default, #3e4550);
+  opacity: 1;
+}
+
+.hpe-textarea__field:disabled {
+  cursor: not-allowed;
+}
+
+.hpe-textarea__field:focus {
+  outline: none;
+}
+
+.hpe-textarea--typing .hpe-textarea__field {
+  border-color: var(--hpe-web-color-border-selected, #006750);
+}
+
+.hpe-textarea--complete .hpe-textarea__field {
+  border-color: var(--hpe-web-color-border-strong, #535c66);
+}
+
+.hpe-textarea--error .hpe-textarea__field {
+  border-color: var(--hpe-web-color-border-critical, #cc1f1a);
+}
+
+.hpe-textarea--error .hpe-textarea__label-text,
+.hpe-textarea--error .hpe-textarea__required-indicator,
+.hpe-textarea--error .hpe-textarea__field,
+.hpe-textarea--error .hpe-textarea__field::placeholder,
+.hpe-textarea--error .hpe-textarea__description {
+  color: var(--hpe-web-color-text-critical, #cc1f1a);
+}
+
+.hpe-textarea__description {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  font-family: var(--heading-font, "HPE_Graphik", sans-serif);
+  font-size: var(--paragraph-disclaimer-fontsize, 14px);
+  font-weight: var(--paragraph-disclaimer-fontweight, 400);
+  line-height: var(--paragraph-disclaimer-lineheight, 20px);
+  letter-spacing: var(--paragraph-disclaimer-letterspacing, 0);
+  color: var(--hpe-web-color-text-default, #3e4550);
+}
+
+.hpe-textarea__description-text {
+  flex: 1;
+  margin: 0;
+  min-height: 20px;
+}
+
+.hpe-textarea__char-counter {
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.hpe-textarea--typing .hpe-textarea__field,
+.hpe-textarea--complete .hpe-textarea__field,
+.hpe-textarea--typing .hpe-textarea__field::placeholder,
+.hpe-textarea--complete .hpe-textarea__field::placeholder {
+  color: var(--hpe-web-color-text-strong, #292d3a);
+}
+
+.hpe-textarea--disabled .hpe-textarea__field {
+  border-color: var(--hpe-web-color-border-weak, #d4d8db);
+}
+
+.hpe-textarea--disabled .hpe-textarea__label-text,
+.hpe-textarea--disabled .hpe-textarea__required-indicator,
+.hpe-textarea--disabled .hpe-textarea__field,
+.hpe-textarea--disabled .hpe-textarea__field::placeholder,
+.hpe-textarea--disabled .hpe-textarea__description {
+  color: var(--hpe-web-color-text-disabled, rgba(0, 0, 0, 0.24));
+}

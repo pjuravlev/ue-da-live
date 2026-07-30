@@ -1,0 +1,118 @@
+{
+  "name": "@hpe-web/components",
+  "version": "1.3.1",
+  "description": "HPE Web Design System - Components, Lit web components that consume design tokens as CSS custom properties",
+  "keywords": [
+    "components",
+    "design-system",
+    "hpe",
+    "lit",
+    "web-components"
+  ],
+  "homepage": "https://github.com/HPE-EMU/design-system/tree/main/packages/components#readme",
+  "bugs": {
+    "url": "https://github.com/HPE-EMU/design-system/issues"
+  },
+  "author": "HPE Digital Design System",
+  "license": "UNLICENSED",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HPE-EMU/design-system.git",
+    "directory": "packages/components"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "customElements": "dist/custom-elements.json",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./stylesheets.css": "./dist/stylesheets.css",
+    "./hpe-accordion.css": "./dist/elements/hpe-accordion/hpe-accordion.css",
+    "./hpe-agenda.css": "./dist/elements/hpe-agenda/hpe-agenda.css",
+    "./hpe-button-group.css": "./dist/elements/hpe-button-group/hpe-button-group.css",
+    "./hpe-button.css": "./dist/elements/hpe-button/hpe-button.css",
+    "./hpe-card.css": "./dist/elements/hpe-card/hpe-card.css",
+    "./hpe-carousel.css": "./dist/elements/hpe-carousel/hpe-carousel.css",
+    "./hpe-checkbox.css": "./dist/elements/hpe-inputs/hpe-checkbox/hpe-checkbox.css",
+    "./hpe-columns.css": "./dist/foundation/hpe-columns/hpe-columns.css",
+    "./hpe-condensed-heading.css": "./dist/foundation/hpe-typography/hpe-condensed-heading/hpe-condensed-heading.css",
+    "./hpe-form.css": "./dist/elements/hpe-form/hpe-form.css",
+    "./hpe-heading.css": "./dist/foundation/hpe-typography/hpe-heading/hpe-heading.css",
+    "./hpe-horizontal-rule.css": "./dist/elements/hpe-horizontal-rule/hpe-horizontal-rule.css",
+    "./hpe-image.css": "./dist/elements/hpe-image/hpe-image.css",
+    "./hpe-input.css": "./dist/elements/hpe-inputs/hpe-input/hpe-input.css",
+    "./hpe-input-group.css": "./dist/elements/hpe-input-group/hpe-input-group.css",
+    "./hpe-list.css": "./dist/elements/hpe-list/hpe-list.css",
+    "./hpe-paragraph.css": "./dist/foundation/hpe-typography/hpe-paragraph/hpe-paragraph.css",
+    "./hpe-pull-quote.css": "./dist/elements/hpe-pull-quote/hpe-pull-quote.css",
+    "./hpe-radio.css": "./dist/elements/hpe-inputs/hpe-radio/hpe-radio.css",
+    "./hpe-section.css": "./dist/foundation/hpe-section/hpe-section.css",
+    "./hpe-select.css": "./dist/elements/hpe-inputs/hpe-select/hpe-select.css",
+    "./hpe-tab-group.css": "./dist/elements/hpe-tab-group/hpe-tab-group.css",
+    "./hpe-table.css": "./dist/elements/hpe-table/hpe-table.css",
+    "./hpe-textarea.css": "./dist/elements/hpe-inputs/hpe-textarea/hpe-textarea.css",
+    "./hpe-x-stack.css": "./dist/foundation/hpe-stacks/hpe-x-stack/hpe-x-stack.css",
+    "./hpe-y-stack.css": "./dist/foundation/hpe-stacks/hpe-y-stack/hpe-y-stack.css",
+    "./elements/*/*.css": "./dist/elements/*/*.css",
+    "./elements/*/*/*.css": "./dist/elements/*/*/*.css",
+    "./foundation/*/*.css": "./dist/foundation/*/*.css",
+    "./foundation/*/*/*.css": "./dist/foundation/*/*/*.css",
+    "./ssr": {
+      "types": "./dist/ssr.d.ts",
+      "default": "./dist/ssr.js"
+    },
+    "./ssr-client": {
+      "types": "./dist/ssr-client.d.ts",
+      "default": "./dist/ssr-client.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build:cem": "cem analyze",
+    "build:components": "tsc -p tsconfig.build.json && node scripts/copy-consumer-styles.mjs",
+    "build": "cem analyze && npm run build:components",
+    "consumer-styles:copy": "node scripts/copy-consumer-styles.mjs",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@lit-labs/ssr": "^3.3.1",
+    "@lit-labs/ssr-client": "^1.1.7",
+    "@lit/react": "^1.0.8",
+    "lit": "^3.3.2"
+  },
+  "peerDependencies": {
+    "@hpe-web/design-tokens": ">=1.1.0",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
+    "eslint": "^9.39.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

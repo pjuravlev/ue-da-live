@@ -21,7 +21,7 @@ export default defineConfig({
         include: [
           path.resolve(
             process.cwd(),
-            'node_modules/@hpe-web'
+            'scripts/components'
           )
         ],
         resolve: {

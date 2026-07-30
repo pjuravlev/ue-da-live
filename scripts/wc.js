@@ -1,1 +1,1 @@
-import '@hpe-web/components';
+import './components/dist/index';
