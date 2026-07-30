@@ -164,10 +164,6 @@
                 {
                   "name": "text",
                   "selector": "div:nth-child(2)"
-                },
-                {
-                  "name": "tagline",
-                  "selector": "div:nth-child(3) > div"
                 }
               ]
             }
