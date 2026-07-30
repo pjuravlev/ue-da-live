@@ -1,20 +1,38 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { getContent } from '../../scripts/utils.js';
+
+function createCard(card) {
+  const hpeCard = document.createElement('hpe-card');
+  hpeCard.setAttribute('variant', 'default');
+  //hpeCard.style.setProperty('max-width', '370px');
+  const content = getContent(card, {
+    image: { $: 'div:nth-of-type(1) > picture', type: 'html' },
+    heading: { $: 'div:nth-of-type(2) > h1' },
+    description: { $: 'div:nth-of-type(2) > p', type: 'html' },
+    tagline: { $: 'div:nth-of-type(3) > div', type: 'html' },
+  });
+  hpeCard.innerHTML = [
+    content.image ? `<hpe-image slot="media" src="${content.image.querySelector('img').src}" alt="Abstract blue glass texture" aspect-ratio="16:9"></hpe-image>` : ``,
+    content.tagline ? `<span slot="tagline">${content.tagline.innerHTML}</span>` : ``,
+    content.heading ? `<span slot="heading">${content.heading}</span>` : ``,
+    content.description ? `<hpe-paragraph slot="body" size="md">${content.description.innerHTML}</hpe-paragraph>` : ``,
+    `          <hpe-button-group slot="actions" orientation="vertical">
+            
+                <hpe-button type="link-primary" size="default">
+                  Learn more
+                </hpe-button>
+              
+                <hpe-button type="link-neutral" size="default">
+                  Contact us
+                </hpe-button>
+              
+          </hpe-button-group>`
+  ].filter(Boolean).join('');
+  return hpeCard;
+}
 
 export default function decorate(block) {
-  /* change to ul, li */
-  const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
-    const li = document.createElement('li');
-    while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
-    });
-    ul.append(li);
+    const item = createCard(row);
+    block.replaceChild(item, row);
   });
-
-  // replace images with optimized versions
-  ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
-
-  block.replaceChildren(ul);
 }
