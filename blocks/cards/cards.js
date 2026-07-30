@@ -32,7 +32,8 @@ function createCard(card) {
 
 export default function decorate(block) {
   [...block.children].forEach((row) => {
-    //const item = createCard(row);
-    //block.replaceChild(item, row);
+    const item = createCard(row);
+    //row.innerHTML = '';
+    row.replaceChildren(item);
   });
 }
