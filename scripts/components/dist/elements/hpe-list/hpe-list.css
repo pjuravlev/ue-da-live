@@ -1,0 +1,65 @@
+.hpe-list {
+  --hpe-list-item-gap: var(--hpe-web-spacing-small, 1.5rem);
+  --hpe-list-gap: var(--hpe-web-spacing-xsmall, 1rem);
+  --hpe-list-bullet-color: var(--hpe-web-color-background-primary, #01a982);
+  display: block;
+  width: 100%;
+}
+
+.hpe-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hpe-list-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hpe-list-item {
+  position: relative;
+  display: block;
+  padding-left: var(--hpe-list-item-gap);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hpe-list-item__bullet {
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hpe-list-item__checkmark {
+  width: 16px;
+  height: 16px;
+  color: var(--hpe-list-bullet-color);
+}
+
+.hpe-list-item__checkmark path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+}
+
+.hpe-list-item__point {
+  width: 7px;
+  height: 7px;
+  background: var(--hpe-list-bullet-color);
+  display: block;
+}
+
+.hpe-list-item__text {
+  display: block;
+  min-width: 0;
+}
+
+.hpe-list-item--checkmark .hpe-list-item__point,
+.hpe-list-item--bullet-point .hpe-list-item__checkmark {
+  display: none;
+}

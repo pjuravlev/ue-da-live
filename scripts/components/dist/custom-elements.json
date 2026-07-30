@@ -1,0 +1,4958 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-accordion/hpe-accordion.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A single accordion item with a trigger and expandable content region.",
+          "name": "HpeAccordionItem",
+          "cssParts": [
+            {
+              "description": "The accordion item wrapper",
+              "name": "item"
+            },
+            {
+              "description": "The accordion trigger button",
+              "name": "trigger"
+            },
+            {
+              "description": "The accordion label text",
+              "name": "label"
+            },
+            {
+              "description": "The chevron icon container",
+              "name": "icon"
+            },
+            {
+              "description": "The expandable content region",
+              "name": "panel"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Accordion panel content shown when expanded",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Accordion Item Label\"",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "expanded",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "panelId",
+              "privacy": "private",
+              "readonly": true,
+              "default": "`hpe-accordion-panel-${accordionId++}`"
+            },
+            {
+              "kind": "field",
+              "name": "triggerId",
+              "privacy": "private",
+              "readonly": true,
+              "default": "`hpe-accordion-trigger-${accordionId++}`"
+            },
+            {
+              "kind": "method",
+              "name": "focusTrigger"
+            },
+            {
+              "kind": "method",
+              "name": "handleToggle",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleKeydown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "accordion-item-toggle",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Emitted when the item requests a new expansion state"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Accordion trigger label text",
+              "name": "label",
+              "default": "\"Accordion Item Label\"",
+              "fieldName": "label"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether the accordion content is expanded",
+              "name": "expanded",
+              "default": "false",
+              "fieldName": "expanded"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether the accordion trigger is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-accordion-item",
+          "customElement": true,
+          "summary": "Displays a single accordion item with an H5 label and chevron icon."
+        },
+        {
+          "kind": "class",
+          "description": "A parent accordion that coordinates related accordion items.",
+          "name": "HpeAccordion",
+          "cssParts": [
+            {
+              "description": "The accordion container element",
+              "name": "accordion"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Accordion item elements (use `<hpe-accordion-item>`)",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "items",
+              "type": {
+                "text": "HpeAccordionItem[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "updateItems",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleItemToggle",
+              "privacy": "private"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-accordion",
+          "customElement": true,
+          "summary": "Organizes multiple accordion items and keeps a single item expanded at a time."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeAccordionItem",
+          "declaration": {
+            "name": "HpeAccordionItem",
+            "module": "elements/hpe-accordion/hpe-accordion.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-accordion-item",
+          "declaration": {
+            "name": "HpeAccordionItem",
+            "module": "elements/hpe-accordion/hpe-accordion.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeAccordion",
+          "declaration": {
+            "name": "HpeAccordion",
+            "module": "elements/hpe-accordion/hpe-accordion.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-accordion",
+          "declaration": {
+            "name": "HpeAccordion",
+            "module": "elements/hpe-accordion/hpe-accordion.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-agenda/hpe-agenda.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A stacked agenda pattern for organizing time-based event rows.",
+          "name": "HpeAgenda",
+          "cssParts": [
+            {
+              "description": "Outer agenda section wrapper.",
+              "name": "section"
+            },
+            {
+              "description": "Inner agenda container.",
+              "name": "container"
+            }
+          ],
+          "slots": [
+            {
+              "description": "One or more <hpe-agenda-row> elements.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "format",
+              "type": {
+                "text": "'alternating' | 'border' | 'no-border'"
+              },
+              "default": "'alternating'",
+              "attribute": "format",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "syncRows",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "'alternating' | 'border' | 'no-border'"
+              },
+              "name": "format",
+              "default": "'alternating'",
+              "fieldName": "format"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-agenda",
+          "customElement": true,
+          "summary": "Agenda container that applies alternating and border variants to row children."
+        },
+        {
+          "kind": "class",
+          "description": "One agenda row with a time column and content column.",
+          "name": "HpeAgendaRow",
+          "cssParts": [
+            {
+              "description": "Row container.",
+              "name": "row"
+            },
+            {
+              "description": "Time column.",
+              "name": "time"
+            },
+            {
+              "description": "Content column.",
+              "name": "content"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Time or label content for the first column.",
+              "name": "time"
+            },
+            {
+              "description": "Optional agenda item title.",
+              "name": "title"
+            },
+            {
+              "description": "Optional agenda item description.",
+              "name": "description"
+            },
+            {
+              "description": "Main row content for the second column.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "tone",
+              "type": {
+                "text": "'default' | 'sunken'"
+              },
+              "default": "'default'",
+              "attribute": "tone",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "bordered",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "bordered",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "'default' | 'sunken'"
+              },
+              "name": "tone",
+              "default": "'default'",
+              "fieldName": "tone"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "name": "bordered",
+              "default": "false",
+              "fieldName": "bordered"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-agenda-row",
+          "customElement": true,
+          "summary": "Two-column agenda row for time and description content."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeAgenda",
+          "declaration": {
+            "name": "HpeAgenda",
+            "module": "elements/hpe-agenda/hpe-agenda.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-agenda",
+          "declaration": {
+            "name": "HpeAgenda",
+            "module": "elements/hpe-agenda/hpe-agenda.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeAgendaRow",
+          "declaration": {
+            "name": "HpeAgendaRow",
+            "module": "elements/hpe-agenda/hpe-agenda.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-agenda-row",
+          "declaration": {
+            "name": "HpeAgendaRow",
+            "module": "elements/hpe-agenda/hpe-agenda.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-button/hpe-button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A button component for user interactions with multiple types, sizes, and states.",
+          "name": "HpeButton",
+          "cssParts": [
+            {
+              "description": "The button element",
+              "name": "button"
+            },
+            {
+              "description": "The button label text",
+              "name": "label"
+            },
+            {
+              "description": "The icon container",
+              "name": "icon"
+            },
+            {
+              "description": "The leading icon container",
+              "name": "start-icon"
+            },
+            {
+              "description": "The trailing icon container",
+              "name": "end-icon"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Button label text",
+              "name": ""
+            },
+            {
+              "description": "Leading icon content, typically an icon component from a separate package",
+              "name": "start-icon"
+            },
+            {
+              "description": "Trailing icon content, typically an icon component from a separate package",
+              "name": "end-icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hasStartIcon",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "hasEndIcon",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"link-primary\" | \"link-neutral\""
+              },
+              "default": "\"primary\"",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "\"small\" | \"default\" | \"large\""
+              },
+              "default": "\"default\"",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Label\"",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showLeftIcon",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "show-left-icon",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showRightIcon",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-right-icon",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "hasSlottedIcon",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "slotName",
+                  "type": {
+                    "text": "\"start-icon\" | \"end-icon\""
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "syncSlottedIcons",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleIconSlotChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "backwardArrowIcon",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "forwardArrowIcon",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "renderIcon",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "slotName",
+                  "type": {
+                    "text": "\"start-icon\" | \"end-icon\""
+                  }
+                },
+                {
+                  "name": "hidden",
+                  "type": {
+                    "text": "boolean"
+                  }
+                },
+                {
+                  "name": "fallbackIcon",
+                  "optional": true,
+                  "type": {
+                    "text": "ReturnType<typeof html>"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"primary\" | \"secondary\" | \"link-primary\" | \"link-neutral\""
+              },
+              "description": "Button type: \"primary\" | \"secondary\" | \"link-primary\" | \"link-neutral\"",
+              "name": "type",
+              "default": "\"primary\"",
+              "fieldName": "type"
+            },
+            {
+              "type": {
+                "text": "\"small\" | \"default\" | \"large\""
+              },
+              "description": "Button size: \"small\" | \"default\" | \"large\"",
+              "name": "size",
+              "default": "\"default\"",
+              "fieldName": "size"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Fallback label when no slotted text is provided",
+              "name": "label",
+              "default": "\"Label\"",
+              "fieldName": "label"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether the button is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the fallback leading arrow icon",
+              "name": "show-left-icon",
+              "default": "false",
+              "fieldName": "showLeftIcon"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the fallback trailing arrow icon",
+              "name": "show-right-icon",
+              "default": "true",
+              "fieldName": "showRightIcon"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-button",
+          "customElement": true,
+          "summary": "Displays a button with configurable type, size, and state variants."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeButton",
+          "declaration": {
+            "name": "HpeButton",
+            "module": "elements/hpe-button/hpe-button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-button",
+          "declaration": {
+            "name": "HpeButton",
+            "module": "elements/hpe-button/hpe-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-button-group/hpe-button-group.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A button group component for organizing multiple buttons in a layout.",
+          "name": "HpeButtonGroup",
+          "cssParts": [
+            {
+              "description": "The button group container",
+              "name": "group"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Button elements to be grouped",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "orientation",
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "default": "\"horizontal\"",
+              "attribute": "orientation",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "description": "Layout orientation: \"horizontal\" | \"vertical\"",
+              "name": "orientation",
+              "default": "\"horizontal\"",
+              "fieldName": "orientation"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-button-group",
+          "customElement": true,
+          "summary": "Organizes buttons horizontally or vertically with consistent spacing."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeButtonGroup",
+          "declaration": {
+            "name": "HpeButtonGroup",
+            "module": "elements/hpe-button-group/hpe-button-group.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-button-group",
+          "declaration": {
+            "name": "HpeButtonGroup",
+            "module": "elements/hpe-button-group/hpe-button-group.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-card/hpe-card.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A card component for displaying content in a contained, visually\ndistinct surface. The card provides named regions that align with\nthe current design structure and encourage composition with\nexisting package primitives.",
+          "name": "HpeCard",
+          "cssParts": [
+            {
+              "description": "The outer card container element",
+              "name": "card"
+            },
+            {
+              "description": "The media area wrapper",
+              "name": "card-media"
+            },
+            {
+              "description": "The optional header region wrapper",
+              "name": "card-header"
+            },
+            {
+              "description": "The text content area wrapper",
+              "name": "card-body"
+            },
+            {
+              "description": "The main text content wrapper",
+              "name": "card-content"
+            },
+            {
+              "description": "The tagline region wrapper",
+              "name": "tagline"
+            },
+            {
+              "description": "The heading region wrapper",
+              "name": "heading"
+            },
+            {
+              "description": "The body region wrapper",
+              "name": "body"
+            },
+            {
+              "description": "The optional footer region wrapper",
+              "name": "card-footer"
+            },
+            {
+              "description": "The action region wrapper",
+              "name": "card-actions"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Primary visual media. Intended to host hpe-image.",
+              "name": "media"
+            },
+            {
+              "description": "Optional supportive content such as an avatar or logo.",
+              "name": "header"
+            },
+            {
+              "description": "Optional small label above the heading.",
+              "name": "tagline"
+            },
+            {
+              "description": "Headline content.",
+              "name": "heading"
+            },
+            {
+              "description": "Body copy content.",
+              "name": "body"
+            },
+            {
+              "description": "Optional supporting content displayed above actions.",
+              "name": "footer"
+            },
+            {
+              "description": "Optional action group. Falls back to a single link-primary button.",
+              "name": "actions"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "\"default\" | \"flush\""
+              },
+              "default": "\"default\"",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_hasMedia",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_hasHeader",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_hasFooter",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_hasActions",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "_hasAssignedElements",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "slot",
+                  "type": {
+                    "text": "HTMLSlotElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onMediaSlotChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onHeaderSlotChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onFooterSlotChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onActionsSlotChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"default\" | \"flush\""
+              },
+              "description": "Card presentation: \"default\" | \"flush\"",
+              "name": "variant",
+              "default": "\"default\"",
+              "fieldName": "variant"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-card",
+          "customElement": true,
+          "summary": "Displays content in a card surface with media, header, copy, footer, and action regions."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeCard",
+          "declaration": {
+            "name": "HpeCard",
+            "module": "elements/hpe-card/hpe-card.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-card",
+          "declaration": {
+            "name": "HpeCard",
+            "module": "elements/hpe-card/hpe-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-form/hpe-form.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A form container matching the Figma form layout with heading, body copy, field stack, and primary action.\nRenders as a native HTML form element with form-associated custom element support.",
+          "name": "HpeForm",
+          "cssParts": [
+            {
+              "description": "The outer form container",
+              "name": "container"
+            },
+            {
+              "description": "The heading and description area",
+              "name": "header"
+            },
+            {
+              "description": "The slotted field stack",
+              "name": "fields"
+            },
+            {
+              "description": "The action row",
+              "name": "actions"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Form fields and grouped controls",
+              "name": ""
+            },
+            {
+              "description": "Optional additional action buttons rendered alongside the default submit button",
+              "name": "actions"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "heading",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Heading\"",
+              "attribute": "heading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "description",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Desription text providing context for the form and its fields. This can be a few sentences long.\"",
+              "attribute": "description",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "submitLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Submit\"",
+              "attribute": "submit-label",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "onSubmit",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "SubmitEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "onSubmitClick",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "name": "submit",
+              "type": {
+                "text": "SubmitEvent"
+              },
+              "description": "Dispatched when the form is submitted with valid data"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Heading text displayed at the top of the form",
+              "name": "heading",
+              "default": "\"Heading\"",
+              "fieldName": "heading"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Supporting body copy displayed below the heading",
+              "name": "description",
+              "default": "\"Desription text providing context for the form and its fields. This can be a few sentences long.\"",
+              "fieldName": "description"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Label used for the default submit button",
+              "name": "submit-label",
+              "default": "\"Submit\"",
+              "fieldName": "submitLabel"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-form",
+          "customElement": true,
+          "summary": "Displays a token-backed form shell with slotted input controls, a submit action, and optional additional actions."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeForm",
+          "declaration": {
+            "name": "HpeForm",
+            "module": "elements/hpe-form/hpe-form.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-form",
+          "declaration": {
+            "name": "HpeForm",
+            "module": "elements/hpe-form/hpe-form.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-carousel/hpe-carousel.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A reusable carousel element that displays slotted slides with optional\nprevious and next navigation controls.",
+          "name": "HpeCarousel",
+          "cssParts": [
+            {
+              "description": "The outer carousel wrapper.",
+              "name": "container"
+            },
+            {
+              "description": "The slide viewport and track wrapper.",
+              "name": "slides"
+            },
+            {
+              "description": "The navigation controls wrapper.",
+              "name": "controls"
+            },
+            {
+              "description": "The previous navigation button.",
+              "name": "prev-button"
+            },
+            {
+              "description": "The next navigation button.",
+              "name": "next-button"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Carousel slide content.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "visibleSlides",
+              "type": {
+                "text": "number"
+              },
+              "default": "1",
+              "attribute": "visible-slides",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showControls",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-controls",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showSlideCount",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "show-slide-count",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "currentIndex",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "totalSlides",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "slidesElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "currentSlideIndex",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "pageCount",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "totalPages",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "syncSlides",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateSlideWidth",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "goTo",
+              "parameters": [
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "goToPrevious"
+            },
+            {
+              "kind": "method",
+              "name": "goToNext"
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "notifyStateChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderIcon",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "direction",
+                  "type": {
+                    "text": "\"left\" | \"right\""
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "hpe-carousel-change",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Dispatched when the current slide or page count changes."
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of visible slides at once.",
+              "name": "visible-slides",
+              "default": "1",
+              "fieldName": "visibleSlides"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether navigation controls are shown.",
+              "name": "show-controls",
+              "default": "true",
+              "fieldName": "showControls"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to render the slide count label alongside controls.",
+              "name": "show-slide-count",
+              "default": "false",
+              "fieldName": "showSlideCount"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-carousel",
+          "customElement": true,
+          "summary": "Displays slotted content as horizontally scrollable slides with circular navigation controls."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeCarousel",
+          "declaration": {
+            "name": "HpeCarousel",
+            "module": "elements/hpe-carousel/hpe-carousel.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-carousel",
+          "declaration": {
+            "name": "HpeCarousel",
+            "module": "elements/hpe-carousel/hpe-carousel.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-horizontal-rule/hpe-horizontal-rule.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A decorative horizontal rule used to visually separate sections of content.",
+          "name": "HpeHorizontalRule",
+          "cssParts": [
+            {
+              "description": "The underlying `<hr>` element.",
+              "name": "rule"
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-horizontal-rule",
+          "customElement": true,
+          "summary": "A full-width horizontal divider styled with the design-system border token."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeHorizontalRule",
+          "declaration": {
+            "name": "HpeHorizontalRule",
+            "module": "elements/hpe-horizontal-rule/hpe-horizontal-rule.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-horizontal-rule",
+          "declaration": {
+            "name": "HpeHorizontalRule",
+            "module": "elements/hpe-horizontal-rule/hpe-horizontal-rule.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-image/hpe-image.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An image container component with flexible aspect ratio support.\nSupports six aspect ratio variants optimized for different use cases.",
+          "name": "HpeImage",
+          "cssParts": [
+            {
+              "description": "The image container element",
+              "name": "container"
+            },
+            {
+              "description": "The img element",
+              "name": "image"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Fallback content if image fails to load or for placeholder",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "src",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "alt",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Image\"",
+              "attribute": "alt",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "aspectRatio",
+              "type": {
+                "text": "\"16:9\" | \"4:3\" | \"1:1\" | \"9:16\" | \"3:4\" | \"18:5\""
+              },
+              "default": "\"4:3\"",
+              "attribute": "aspect-ratio",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Image source URL",
+              "name": "src",
+              "fieldName": "src"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Alternative text for accessibility",
+              "name": "alt",
+              "default": "\"Image\"",
+              "fieldName": "alt"
+            },
+            {
+              "type": {
+                "text": "\"16:9\" | \"4:3\" | \"1:1\" | \"9:16\" | \"3:4\" | \"18:5\""
+              },
+              "description": "Aspect ratio: \"16:9\" | \"4:3\" | \"1:1\" | \"9:16\" | \"3:4\" | \"18:5\" (default: \"4:3\")",
+              "name": "aspect-ratio",
+              "default": "\"4:3\"",
+              "fieldName": "aspectRatio"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-image",
+          "customElement": true,
+          "summary": "Displays an image with configurable aspect ratio options."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeImage",
+          "declaration": {
+            "name": "HpeImage",
+            "module": "elements/hpe-image/hpe-image.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-image",
+          "declaration": {
+            "name": "HpeImage",
+            "module": "elements/hpe-image/hpe-image.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-input-group/hpe-input-group.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An input group component for organizing related input controls in a layout.",
+          "name": "HpeInputGroup",
+          "cssParts": [
+            {
+              "description": "The input group container",
+              "name": "input-group"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Input elements to be grouped",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "orientation",
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "default": "\"horizontal\"",
+              "attribute": "orientation",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "description": "Layout orientation: \"horizontal\" | \"vertical\"",
+              "name": "orientation",
+              "default": "\"horizontal\"",
+              "fieldName": "orientation"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-input-group",
+          "customElement": true,
+          "summary": "Organizes checkbox, radio, or other input controls horizontally or vertically with consistent spacing."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeInputGroup",
+          "declaration": {
+            "name": "HpeInputGroup",
+            "module": "elements/hpe-input-group/hpe-input-group.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-input-group",
+          "declaration": {
+            "name": "HpeInputGroup",
+            "module": "elements/hpe-input-group/hpe-input-group.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-list/hpe-list.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A list item component with configurable bullet marker.",
+          "name": "HpeListItem",
+          "cssParts": [
+            {
+              "description": "The list item row container",
+              "name": "item"
+            },
+            {
+              "description": "The bullet marker container",
+              "name": "bullet"
+            },
+            {
+              "description": "The checkmark icon",
+              "name": "checkmark"
+            },
+            {
+              "description": "The square point marker",
+              "name": "point"
+            },
+            {
+              "description": "The text container",
+              "name": "text"
+            }
+          ],
+          "slots": [
+            {
+              "description": "List item text/content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "bulletType",
+              "type": {
+                "text": "BulletType"
+              },
+              "default": "\"checkmark\"",
+              "attribute": "bullet-type",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "BulletType"
+              },
+              "description": "Marker type: \"checkmark\" | \"bullet-point\"",
+              "name": "bullet-type",
+              "default": "\"checkmark\"",
+              "fieldName": "bulletType"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-list-item",
+          "customElement": true,
+          "summary": "Renders one list row with a checkmark or square bullet marker."
+        },
+        {
+          "kind": "class",
+          "description": "A composite list component that coordinates bullet style across child list items.",
+          "name": "HpeList",
+          "cssParts": [
+            {
+              "description": "The list container element",
+              "name": "list"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Slotted `<hpe-list-item>` children",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "bulletType",
+              "type": {
+                "text": "ListBulletType"
+              },
+              "default": "\"checkmark\"",
+              "attribute": "bullet-type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "syncItemBulletTypes",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "ListBulletType"
+              },
+              "description": "Marker mode: \"checkmark\" | \"bullet-point\" | \"mixed\"",
+              "name": "bullet-type",
+              "default": "\"checkmark\"",
+              "fieldName": "bulletType"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-list",
+          "customElement": true,
+          "summary": "Groups list items and applies consistent bullet behavior."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeListItem",
+          "declaration": {
+            "name": "HpeListItem",
+            "module": "elements/hpe-list/hpe-list.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-list-item",
+          "declaration": {
+            "name": "HpeListItem",
+            "module": "elements/hpe-list/hpe-list.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeList",
+          "declaration": {
+            "name": "HpeList",
+            "module": "elements/hpe-list/hpe-list.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-list",
+          "declaration": {
+            "name": "HpeList",
+            "module": "elements/hpe-list/hpe-list.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-tab-group/hpe-tab-group.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A tab element that serves as a label for one of the tab panels.",
+          "name": "HpeTab",
+          "cssParts": [
+            {
+              "description": "The tab container element",
+              "name": "tab"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Tab label text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "activationMode",
+              "type": {
+                "text": "\"automatic\" | \"manual\""
+              },
+              "default": "\"automatic\"",
+              "attribute": "activation-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "orientation",
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "default": "\"horizontal\"",
+              "attribute": "orientation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "active",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleKeydown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "selectTab"
+            }
+          ],
+          "events": [
+            {
+              "name": "tab-selected",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Emitted when the tab is selected"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"automatic\" | \"manual\""
+              },
+              "description": "Tab activation mode: \"automatic\" | \"manual\"",
+              "name": "activation-mode",
+              "default": "\"automatic\"",
+              "fieldName": "activationMode"
+            },
+            {
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "description": "Tab orientation: \"horizontal\" | \"vertical\"",
+              "name": "orientation",
+              "default": "\"horizontal\"",
+              "fieldName": "orientation"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether the tab is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "active"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-tab",
+          "customElement": true,
+          "summary": "A selectable label within a tab group that activates its associated panel"
+        },
+        {
+          "kind": "class",
+          "description": "A tab panel component that contains content for a specific tab.",
+          "name": "HpeTabPanel",
+          "cssParts": [
+            {
+              "description": "The tab panel container element",
+              "name": "tab-panel"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Tab panel content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "active",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "active"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-tab-panel",
+          "customElement": true,
+          "summary": "A container for tab panel content that corresponds to an active tab"
+        },
+        {
+          "kind": "class",
+          "description": "A tab group component for organizing related content.",
+          "name": "HpeTabGroup",
+          "cssParts": [
+            {
+              "description": "The main tab group container",
+              "name": "tabs"
+            },
+            {
+              "description": "The tab group wrapper",
+              "name": "tab-group"
+            },
+            {
+              "description": "The tab panels container",
+              "name": "tab-panels"
+            }
+          ],
+          "slots": [
+            {
+              "description": "The tab elements (use `<hpe-tab>` elements)",
+              "name": "tab"
+            },
+            {
+              "description": "The tab panel elements (use `<hpe-tab-panel>` elements)",
+              "name": "panel"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "activationMode",
+              "type": {
+                "text": "\"automatic\" | \"manual\""
+              },
+              "default": "\"automatic\"",
+              "attribute": "activation-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "orientation",
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "default": "\"horizontal\"",
+              "attribute": "orientation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "activeTabIndex",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "activeTabIndex"
+            },
+            {
+              "kind": "field",
+              "name": "tabs",
+              "type": {
+                "text": "HpeTab[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "panels",
+              "type": {
+                "text": "HpeTabPanel[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "method",
+              "name": "updateTabsAndPanels",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleTabSelected",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "setActiveTab",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"automatic\" | \"manual\""
+              },
+              "description": "Tab activation mode: \"automatic\" | \"manual\"",
+              "name": "activation-mode",
+              "default": "\"automatic\"",
+              "fieldName": "activationMode"
+            },
+            {
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "description": "Tab orientation: \"horizontal\" | \"vertical\"",
+              "name": "orientation",
+              "default": "\"horizontal\"",
+              "fieldName": "orientation"
+            },
+            {
+              "name": "activeTabIndex",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "activeTabIndex"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-tab-group",
+          "customElement": true,
+          "summary": "Tab groups organize related content and allow navigation between groups of information"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeTab",
+          "declaration": {
+            "name": "HpeTab",
+            "module": "elements/hpe-tab-group/hpe-tab-group.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-tab",
+          "declaration": {
+            "name": "HpeTab",
+            "module": "elements/hpe-tab-group/hpe-tab-group.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeTabPanel",
+          "declaration": {
+            "name": "HpeTabPanel",
+            "module": "elements/hpe-tab-group/hpe-tab-group.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-tab-panel",
+          "declaration": {
+            "name": "HpeTabPanel",
+            "module": "elements/hpe-tab-group/hpe-tab-group.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeTabGroup",
+          "declaration": {
+            "name": "HpeTabGroup",
+            "module": "elements/hpe-tab-group/hpe-tab-group.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-tab-group",
+          "declaration": {
+            "name": "HpeTabGroup",
+            "module": "elements/hpe-tab-group/hpe-tab-group.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-pull-quote/hpe-pull-quote.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A pull quote component for highlighting notable quotes with optional attribution.",
+          "name": "HpePullQuote",
+          "cssParts": [
+            {
+              "description": "The decorative SVG quote mark.",
+              "name": "quote-sign"
+            },
+            {
+              "description": "The wrapper containing the quote text and attribution.",
+              "name": "quote-body"
+            },
+            {
+              "description": "The attribution section.",
+              "name": "attribution"
+            },
+            {
+              "description": "The attribution name element.",
+              "name": "attribution-name"
+            },
+            {
+              "description": "The attribution role element.",
+              "name": "attribution-role"
+            }
+          ],
+          "slots": [
+            {
+              "description": "The quote body text.",
+              "name": ""
+            },
+            {
+              "description": "The name of the person being quoted.",
+              "name": "attribution-name"
+            },
+            {
+              "description": "The role or title of the person being quoted.",
+              "name": "attribution-role"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "hideQuoteSign",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "hide-quote-sign",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_hasAttribution",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "_onAttributionSlotChange",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "When present, hides the decorative opening quote mark.",
+              "name": "hide-quote-sign",
+              "default": "false",
+              "fieldName": "hideQuoteSign"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-pull-quote",
+          "customElement": true,
+          "summary": "Displays a highlighted pull quote with a decorative opening quote mark and optional attribution."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpePullQuote",
+          "declaration": {
+            "name": "HpePullQuote",
+            "module": "elements/hpe-pull-quote/hpe-pull-quote.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-pull-quote",
+          "declaration": {
+            "name": "HpePullQuote",
+            "module": "elements/hpe-pull-quote/hpe-pull-quote.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-table/hpe-table.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A table heading cell used within table header rows.",
+          "name": "HpeTableHeaderCell",
+          "cssParts": [
+            {
+              "description": "The header cell container",
+              "name": "header-cell"
+            },
+            {
+              "description": "The header cell content wrapper",
+              "name": "header-cell-content"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Header cell content",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-table-header-cell",
+          "customElement": true,
+          "summary": "Displays heading text for a table column."
+        },
+        {
+          "kind": "class",
+          "description": "A table body cell used within table body rows.",
+          "name": "HpeTableBodyCell",
+          "cssParts": [
+            {
+              "description": "The body cell container",
+              "name": "body-cell"
+            },
+            {
+              "description": "The body cell content wrapper",
+              "name": "body-cell-content"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Body cell content",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-table-body-cell",
+          "customElement": true,
+          "summary": "Displays body text content for a table row cell."
+        },
+        {
+          "kind": "class",
+          "description": "A table header row wrapper for grouping heading cells.",
+          "name": "HpeTableHeaderRow",
+          "cssParts": [
+            {
+              "description": "The header row container",
+              "name": "header-row"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Header cell elements, typically `<hpe-table-header-cell>`",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "\"default\" | \"gray\" | \"dark\""
+              },
+              "default": "\"default\"",
+              "attribute": "type",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"default\" | \"gray\" | \"dark\""
+              },
+              "description": "Header row theme: \"default\" | \"gray\" | \"dark\"",
+              "name": "type",
+              "default": "\"default\"",
+              "fieldName": "type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-table-header-row",
+          "customElement": true,
+          "summary": "Groups one or more table heading cells with a themed row surface."
+        },
+        {
+          "kind": "class",
+          "description": "A table body row wrapper for grouping body cells.",
+          "name": "HpeTableBodyRow",
+          "cssParts": [
+            {
+              "description": "The body row container",
+              "name": "body-row"
+            },
+            {
+              "description": "The body row cells wrapper",
+              "name": "body-row-cells"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Body cell elements, typically `<hpe-table-body-cell>`",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "orientation",
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "default": "\"horizontal\"",
+              "attribute": "orientation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "\"default\" | \"stripped\""
+              },
+              "default": "\"default\"",
+              "attribute": "type",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"horizontal\" | \"vertical\""
+              },
+              "description": "Body row layout: \"horizontal\" | \"vertical\"",
+              "name": "orientation",
+              "default": "\"horizontal\"",
+              "fieldName": "orientation"
+            },
+            {
+              "type": {
+                "text": "\"default\" | \"stripped\""
+              },
+              "description": "Body row theme: \"default\" | \"stripped\"",
+              "name": "type",
+              "default": "\"default\"",
+              "fieldName": "type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-table-body-row",
+          "customElement": true,
+          "summary": "Groups one or more table body cells in horizontal or stacked layouts."
+        },
+        {
+          "kind": "class",
+          "description": "A composite table component with slotted header and body rows.",
+          "name": "HpeTable",
+          "cssParts": [
+            {
+              "description": "The outer table container",
+              "name": "container"
+            },
+            {
+              "description": "The scrollable table surface",
+              "name": "table"
+            },
+            {
+              "description": "The header rows wrapper",
+              "name": "header-rows"
+            },
+            {
+              "description": "The body rows wrapper",
+              "name": "body-rows"
+            },
+            {
+              "description": "The mobile overflow gradient hint",
+              "name": "overflow-gradient"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Header row elements, typically `<hpe-table-header-row>`",
+              "name": "header-row"
+            },
+            {
+              "description": "Body row elements, typically `<hpe-table-body-row>`",
+              "name": "body-row"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "structureObserver",
+              "privacy": "private",
+              "default": "new MutationObserver(() => { this.requestUpdate(); })"
+            },
+            {
+              "kind": "field",
+              "name": "headerRows",
+              "type": {
+                "text": "HpeTableHeaderRow[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "bodyRows",
+              "type": {
+                "text": "HpeTableBodyRow[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "observeStructureChanges",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderHeaderRow",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "HpeTableHeaderRow"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderBodyRow",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "HpeTableBodyRow"
+                  }
+                },
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderCellContent",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "cell",
+                  "type": {
+                    "text": "HpeTableHeaderCell | HpeTableBodyCell"
+                  }
+                },
+                {
+                  "name": "fallbackText",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-table",
+          "customElement": true,
+          "summary": "Displays coordinated table header and body rows with responsive mobile overflow treatment.\n\nProvide an accessible name with `aria-label` or `aria-labelledby`."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeTableHeaderCell",
+          "declaration": {
+            "name": "HpeTableHeaderCell",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-table-header-cell",
+          "declaration": {
+            "name": "HpeTableHeaderCell",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeTableBodyCell",
+          "declaration": {
+            "name": "HpeTableBodyCell",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-table-body-cell",
+          "declaration": {
+            "name": "HpeTableBodyCell",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeTableHeaderRow",
+          "declaration": {
+            "name": "HpeTableHeaderRow",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-table-header-row",
+          "declaration": {
+            "name": "HpeTableHeaderRow",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeTableBodyRow",
+          "declaration": {
+            "name": "HpeTableBodyRow",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-table-body-row",
+          "declaration": {
+            "name": "HpeTableBodyRow",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HpeTable",
+          "declaration": {
+            "name": "HpeTable",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-table",
+          "declaration": {
+            "name": "HpeTable",
+            "module": "elements/hpe-table/hpe-table.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-inputs/hpe-radio/hpe-radio.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A radio button input component with label and state management.\nSupports checked/unchecked states with enabled/disabled variants.\nImplements ElementInternals for form-associated custom element support.",
+          "name": "HpeRadio",
+          "cssParts": [
+            {
+              "description": "The component container",
+              "name": "container"
+            },
+            {
+              "description": "The radio button and label container",
+              "name": "radio-group"
+            },
+            {
+              "description": "The actual radio input element",
+              "name": "input"
+            },
+            {
+              "description": "The custom radio button circle",
+              "name": "radio"
+            },
+            {
+              "description": "The label text",
+              "name": "label"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "checked",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Radio Label\"",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_onRadioChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "updateFormState",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getValidationMessage",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Radio button name attribute",
+              "name": "name",
+              "fieldName": "name"
+            },
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Radio button value attribute",
+              "name": "value",
+              "fieldName": "value"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether radio button is checked",
+              "name": "checked",
+              "default": "false",
+              "fieldName": "checked"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Label text displayed next to radio button",
+              "name": "label",
+              "default": "\"Radio Label\"",
+              "fieldName": "label"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether radio button is required for form submission",
+              "name": "required",
+              "default": "false",
+              "fieldName": "required"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether radio button is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-radio",
+          "customElement": true,
+          "summary": "A customizable radio button field with label support and form integration."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeRadio",
+          "declaration": {
+            "name": "HpeRadio",
+            "module": "elements/hpe-inputs/hpe-radio/hpe-radio.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-radio",
+          "declaration": {
+            "name": "HpeRadio",
+            "module": "elements/hpe-inputs/hpe-radio/hpe-radio.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-inputs/hpe-input/hpe-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A text input field component with label, helper text, and state management.\nSupports multiple states: Enabled, Error, Typing, Complete, and Disabled.\nImplements ElementInternals for form-associated custom element support.",
+          "name": "HpeInput",
+          "cssParts": [
+            {
+              "description": "The component container",
+              "name": "container"
+            },
+            {
+              "description": "The input label and field container",
+              "name": "input-group"
+            },
+            {
+              "description": "The label element",
+              "name": "label"
+            },
+            {
+              "description": "The label text",
+              "name": "label-text"
+            },
+            {
+              "description": "The required asterisk",
+              "name": "required-indicator"
+            },
+            {
+              "description": "The input field element",
+              "name": "field"
+            },
+            {
+              "description": "The actual input element",
+              "name": "input"
+            },
+            {
+              "description": "The description/helper text container",
+              "name": "description"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Input field wrapper slot",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "idCounter",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "inputId",
+              "privacy": "private",
+              "readonly": true,
+              "default": "`hpe-input-${HpeInput.idCounter++}`"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "placeholder",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Label\"",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showLabel",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "descriptionText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Description (Optional)\"",
+              "attribute": "description-text",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showDescription",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-description",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "pattern",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "state",
+              "type": {
+                "text": "\"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\""
+              },
+              "default": "\"enabled\"",
+              "attribute": "state",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_onInput",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_onFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateFormState",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getValidationMessage",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Input name attribute",
+              "name": "name",
+              "fieldName": "name"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Input value",
+              "name": "value",
+              "default": "\"\"",
+              "fieldName": "value"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Placeholder text",
+              "name": "placeholder",
+              "default": "\"\"",
+              "fieldName": "placeholder"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Label text displayed above input",
+              "name": "label",
+              "default": "\"Label\"",
+              "fieldName": "label"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether input is required (shows asterisk)",
+              "name": "required",
+              "default": "true",
+              "fieldName": "required"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the label",
+              "name": "show-label",
+              "default": "true",
+              "fieldName": "showLabel"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Helper/description text below input",
+              "name": "description-text",
+              "default": "\"Description (Optional)\"",
+              "fieldName": "descriptionText"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the description",
+              "name": "show-description",
+              "default": "true",
+              "fieldName": "showDescription"
+            },
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Regular expression pattern for validation",
+              "name": "pattern",
+              "fieldName": "pattern"
+            },
+            {
+              "type": {
+                "text": "\"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\""
+              },
+              "description": "Input state: \"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\"",
+              "name": "state",
+              "default": "\"enabled\"",
+              "fieldName": "state"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether input is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-input",
+          "customElement": true,
+          "summary": "A customizable text input field with label and description support."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeInput",
+          "declaration": {
+            "name": "HpeInput",
+            "module": "elements/hpe-inputs/hpe-input/hpe-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-input",
+          "declaration": {
+            "name": "HpeInput",
+            "module": "elements/hpe-inputs/hpe-input/hpe-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-inputs/hpe-checkbox/hpe-checkbox.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A checkbox input component with label and state management.\nSupports checked/unchecked states with enabled/disabled variants.\nImplements ElementInternals for form-associated custom element support.",
+          "name": "HpeCheckbox",
+          "cssParts": [
+            {
+              "description": "The component container",
+              "name": "container"
+            },
+            {
+              "description": "The checkbox and label container",
+              "name": "checkbox-group"
+            },
+            {
+              "description": "The actual checkbox input element",
+              "name": "input"
+            },
+            {
+              "description": "The custom checkmark icon",
+              "name": "checkmark"
+            },
+            {
+              "description": "The label text",
+              "name": "label"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "checked",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Checkbox Label\"",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_onCheckboxChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "updateFormState",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getValidationMessage",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Checkbox name attribute",
+              "name": "name",
+              "fieldName": "name"
+            },
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Checkbox value attribute",
+              "name": "value",
+              "fieldName": "value"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether checkbox is checked",
+              "name": "checked",
+              "default": "false",
+              "fieldName": "checked"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Label text displayed next to checkbox",
+              "name": "label",
+              "default": "\"Checkbox Label\"",
+              "fieldName": "label"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether checkbox is required for form submission",
+              "name": "required",
+              "default": "false",
+              "fieldName": "required"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether checkbox is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-checkbox",
+          "customElement": true,
+          "summary": "A customizable checkbox field with label support and form integration."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeCheckbox",
+          "declaration": {
+            "name": "HpeCheckbox",
+            "module": "elements/hpe-inputs/hpe-checkbox/hpe-checkbox.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-checkbox",
+          "declaration": {
+            "name": "HpeCheckbox",
+            "module": "elements/hpe-inputs/hpe-checkbox/hpe-checkbox.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-inputs/hpe-select/hpe-select.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A select dropdown component with label, description, and state management.\nSupports multiple states: Enabled, Error, Typing, Complete, and Disabled.",
+          "name": "HpeSelect",
+          "cssParts": [
+            {
+              "description": "The component container",
+              "name": "container"
+            },
+            {
+              "description": "The input label and field container",
+              "name": "input-group"
+            },
+            {
+              "description": "The label element",
+              "name": "label"
+            },
+            {
+              "description": "The label text",
+              "name": "label-text"
+            },
+            {
+              "description": "The required asterisk",
+              "name": "required-indicator"
+            },
+            {
+              "description": "The select field element",
+              "name": "field"
+            },
+            {
+              "description": "The actual select element",
+              "name": "select"
+            },
+            {
+              "description": "The dropdown icon",
+              "name": "icon"
+            },
+            {
+              "description": "The description/helper text container",
+              "name": "description"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Option elements for the select",
+              "name": "default"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "idCounter",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "selectId",
+              "privacy": "private",
+              "readonly": true,
+              "default": "`hpe-select-${HpeSelect.idCounter++}`"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "optionsMutationObserver",
+              "type": {
+                "text": "MutationObserver | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "parsedOptions",
+              "type": {
+                "text": "HTMLOptionElement[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "parsedOptGroups",
+              "type": {
+                "text": "HTMLOptGroupElement[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Label\"",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showLabel",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "descriptionText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Description (Optional)\"",
+              "attribute": "description-text",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showDescription",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-description",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "state",
+              "type": {
+                "text": "\"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\""
+              },
+              "default": "\"enabled\"",
+              "attribute": "state",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "onOptionsSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "setupMutationObserver",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateOptionCollections",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_onInput",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_onFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateFormState",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getValidationMessage",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Select name attribute",
+              "name": "name",
+              "fieldName": "name"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Selected value",
+              "name": "value",
+              "default": "\"\"",
+              "fieldName": "value"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Label text displayed above select",
+              "name": "label",
+              "default": "\"Label\"",
+              "fieldName": "label"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether select is required (shows asterisk)",
+              "name": "required",
+              "default": "true",
+              "fieldName": "required"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the label",
+              "name": "show-label",
+              "default": "true",
+              "fieldName": "showLabel"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Helper/description text below select",
+              "name": "description-text",
+              "default": "\"Description (Optional)\"",
+              "fieldName": "descriptionText"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the description",
+              "name": "show-description",
+              "default": "true",
+              "fieldName": "showDescription"
+            },
+            {
+              "type": {
+                "text": "\"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\""
+              },
+              "description": "Select state: \"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\"",
+              "name": "state",
+              "default": "\"enabled\"",
+              "fieldName": "state"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether select is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-select",
+          "customElement": true,
+          "summary": "A customizable select field with dropdown affordance and description support."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeSelect",
+          "declaration": {
+            "name": "HpeSelect",
+            "module": "elements/hpe-inputs/hpe-select/hpe-select.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-select",
+          "declaration": {
+            "name": "HpeSelect",
+            "module": "elements/hpe-inputs/hpe-select/hpe-select.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elements/hpe-inputs/hpe-textarea/hpe-textarea.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A multi-line text textarea component with label, character counter, and state management.\nSupports multiple states: Enabled, Error, Typing, Complete, and Disabled.",
+          "name": "HpeTextarea",
+          "cssParts": [
+            {
+              "description": "The component container",
+              "name": "container"
+            },
+            {
+              "description": "The input label and field container",
+              "name": "input-group"
+            },
+            {
+              "description": "The label element",
+              "name": "label"
+            },
+            {
+              "description": "The label text",
+              "name": "label-text"
+            },
+            {
+              "description": "The required asterisk",
+              "name": "required-indicator"
+            },
+            {
+              "description": "The textarea field element",
+              "name": "field"
+            },
+            {
+              "description": "The actual textarea element",
+              "name": "textarea"
+            },
+            {
+              "description": "The description/helper text and counter container",
+              "name": "description"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "idCounter",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "textareaId",
+              "privacy": "private",
+              "readonly": true,
+              "default": "`hpe-textarea-${HpeTextarea.idCounter++}`"
+            },
+            {
+              "kind": "field",
+              "name": "internals",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "placeholder",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Label\"",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showLabel",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "descriptionText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Description (Optional)\"",
+              "attribute": "description-text",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "showDescription",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "show-description",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number"
+              },
+              "default": "3000",
+              "attribute": "max-length",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "state",
+              "type": {
+                "text": "\"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\""
+              },
+              "default": "\"enabled\"",
+              "attribute": "state",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_onInput",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_onFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateFormState",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getValidationMessage",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Textarea name attribute",
+              "name": "name",
+              "fieldName": "name"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Textarea value",
+              "name": "value",
+              "default": "\"\"",
+              "fieldName": "value"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Placeholder text",
+              "name": "placeholder",
+              "default": "\"\"",
+              "fieldName": "placeholder"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Label text displayed above textarea",
+              "name": "label",
+              "default": "\"Label\"",
+              "fieldName": "label"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether textarea is required (shows asterisk)",
+              "name": "required",
+              "default": "true",
+              "fieldName": "required"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the label",
+              "name": "show-label",
+              "default": "true",
+              "fieldName": "showLabel"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Helper/description text below textarea",
+              "name": "description-text",
+              "default": "\"Description (Optional)\"",
+              "fieldName": "descriptionText"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether to show the description",
+              "name": "show-description",
+              "default": "true",
+              "fieldName": "showDescription"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Maximum character length (default: 3000)",
+              "name": "max-length",
+              "default": "3000",
+              "fieldName": "maxLength"
+            },
+            {
+              "type": {
+                "text": "\"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\""
+              },
+              "description": "Textarea state: \"enabled\" | \"error\" | \"typing\" | \"complete\" | \"disabled\"",
+              "name": "state",
+              "default": "\"enabled\"",
+              "fieldName": "state"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Whether textarea is disabled",
+              "name": "disabled",
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-textarea",
+          "customElement": true,
+          "summary": "A customizable textarea field with character counter and description support."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeTextarea",
+          "declaration": {
+            "name": "HpeTextarea",
+            "module": "elements/hpe-inputs/hpe-textarea/hpe-textarea.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-textarea",
+          "declaration": {
+            "name": "HpeTextarea",
+            "module": "elements/hpe-inputs/hpe-textarea/hpe-textarea.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "foundation/hpe-section/hpe-section.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A structural container that constrains content width and applies section padding.",
+          "name": "HpeSection",
+          "cssParts": [
+            {
+              "description": "The outer section element",
+              "name": "section"
+            },
+            {
+              "description": "The inner content-width container",
+              "name": "container"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Section content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "padding",
+              "type": {
+                "text": "\"default\" | \"none\" | \"top\" | \"bottom\" | \"left-right-only\""
+              },
+              "default": "\"default\"",
+              "attribute": "padding",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"default\" | \"none\" | \"top\" | \"bottom\" | \"left-right-only\""
+              },
+              "description": "Padding variant: 'default' | 'none' | 'top' | 'bottom' | 'left-right-only'",
+              "name": "padding",
+              "default": "\"default\"",
+              "fieldName": "padding"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-section",
+          "customElement": true,
+          "summary": "Groups related content into a distinct area with configurable vertical padding."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeSection",
+          "declaration": {
+            "name": "HpeSection",
+            "module": "foundation/hpe-section/hpe-section.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-section",
+          "declaration": {
+            "name": "HpeSection",
+            "module": "foundation/hpe-section/hpe-section.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "foundation/hpe-columns/hpe-columns.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A layout primitive that arranges slotted content into configurable columns.",
+          "name": "HpeColumns",
+          "cssParts": [
+            {
+              "description": "The columns layout container",
+              "name": "columns"
+            },
+            {
+              "description": "A column wrapper element",
+              "name": "column"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Content for the first column",
+              "name": "column-1"
+            },
+            {
+              "description": "Content for the second column",
+              "name": "column-2"
+            },
+            {
+              "description": "Content for the third column",
+              "name": "column-3"
+            },
+            {
+              "description": "Content for the fourth column",
+              "name": "column-4"
+            },
+            {
+              "description": "Content for the fifth column",
+              "name": "column-5"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "columns",
+              "type": {
+                "text": "ColumnsVariant"
+              },
+              "default": "\"2\"",
+              "attribute": "columns",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "orientation",
+              "type": {
+                "text": "Orientation"
+              },
+              "default": "\"horizontal\"",
+              "attribute": "orientation",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "order",
+              "type": {
+                "text": "Order"
+              },
+              "default": "\"default\"",
+              "attribute": "order",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "renderColumn",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "slotName",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "shouldRenderColumn",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "columnNumber",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "columnCount",
+              "privacy": "private",
+              "readonly": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "ColumnsVariant"
+              },
+              "description": "Layout variant: '1' | '2' | '3' | '4' | '5' | '40:60' | '60:40' | '33:66' | '66:33' | '20:80' | '80:20'",
+              "name": "columns",
+              "default": "\"2\"",
+              "fieldName": "columns"
+            },
+            {
+              "type": {
+                "text": "Orientation"
+              },
+              "description": "Layout direction: 'horizontal' | 'vertical'",
+              "name": "orientation",
+              "default": "\"horizontal\"",
+              "fieldName": "orientation"
+            },
+            {
+              "type": {
+                "text": "Order"
+              },
+              "description": "Item order: 'default' | 'reverse'",
+              "name": "order",
+              "default": "\"default\"",
+              "fieldName": "order"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-columns",
+          "customElement": true,
+          "summary": "Distributes content into horizontal or vertical column layouts with optional reverse order."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeColumns",
+          "declaration": {
+            "name": "HpeColumns",
+            "module": "foundation/hpe-columns/hpe-columns.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-columns",
+          "declaration": {
+            "name": "HpeColumns",
+            "module": "foundation/hpe-columns/hpe-columns.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "foundation/hpe-stacks/hpe-x-stack/hpe-x-stack.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A horizontal layout primitive that arranges slotted content in a row with token-based gap variants.",
+          "name": "HpeXStack",
+          "cssParts": [
+            {
+              "description": "The stack container element",
+              "name": "stack"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Stack content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "gap",
+              "type": {
+                "text": "StackGap"
+              },
+              "default": "\"xs\"",
+              "attribute": "gap",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "StackGap"
+              },
+              "description": "Gap variant: 'xs' | 'sm' | 'md' | 'lg'",
+              "name": "gap",
+              "default": "\"xs\"",
+              "fieldName": "gap"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-x-stack",
+          "customElement": true,
+          "summary": "Organizes content horizontally with configurable stack spacing."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeXStack",
+          "declaration": {
+            "name": "HpeXStack",
+            "module": "foundation/hpe-stacks/hpe-x-stack/hpe-x-stack.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-x-stack",
+          "declaration": {
+            "name": "HpeXStack",
+            "module": "foundation/hpe-stacks/hpe-x-stack/hpe-x-stack.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "foundation/hpe-stacks/hpe-y-stack/hpe-y-stack.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A vertical layout primitive that arranges slotted content in a column with token-based gap variants.",
+          "name": "HpeYStack",
+          "cssParts": [
+            {
+              "description": "The stack container element",
+              "name": "stack"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Stack content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "gap",
+              "type": {
+                "text": "StackGap"
+              },
+              "default": "\"xs\"",
+              "attribute": "gap",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "StackGap"
+              },
+              "description": "Gap variant: 'xs' | 'sm' | 'md' | 'lg'",
+              "name": "gap",
+              "default": "\"xs\"",
+              "fieldName": "gap"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-y-stack",
+          "customElement": true,
+          "summary": "Organizes content vertically with configurable stack spacing."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeYStack",
+          "declaration": {
+            "name": "HpeYStack",
+            "module": "foundation/hpe-stacks/hpe-y-stack/hpe-y-stack.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-y-stack",
+          "declaration": {
+            "name": "HpeYStack",
+            "module": "foundation/hpe-stacks/hpe-y-stack/hpe-y-stack.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "foundation/hpe-typography/hpe-condensed-heading/hpe-condensed-heading.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Condensed uppercase heading text for the display heading styles shown in the Figma typography spec.",
+          "name": "HpeCondensedHeading",
+          "cssParts": [
+            {
+              "description": "The rendered condensed heading element",
+              "name": "heading"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Heading content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "level",
+              "type": {
+                "text": "CondensedHeadingLevel"
+              },
+              "default": "\"h1\"",
+              "attribute": "level",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "CondensedHeadingSize"
+              },
+              "default": "\"auto\"",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "weight",
+              "type": {
+                "text": "CondensedHeadingWeight"
+              },
+              "default": "\"regular\"",
+              "attribute": "weight",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "as",
+              "type": {
+                "text": "CondensedHeadingRenderTag | undefined"
+              },
+              "attribute": "as",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "resolvedScale",
+              "type": {
+                "text": "\"display\" | \"xl\" | \"lg\""
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "headingClass",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "renderedTag",
+              "type": {
+                "text": "CondensedHeadingRenderTag"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "renderTag",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "CondensedHeadingLevel"
+              },
+              "description": "Semantic heading level: \"h1\" | \"h2\"",
+              "name": "level",
+              "default": "\"h1\"",
+              "fieldName": "level"
+            },
+            {
+              "type": {
+                "text": "CondensedHeadingSize"
+              },
+              "description": "Visual size: \"auto\" | \"display\"",
+              "name": "size",
+              "default": "\"auto\"",
+              "fieldName": "size"
+            },
+            {
+              "type": {
+                "text": "CondensedHeadingWeight"
+              },
+              "description": "Condensed weight: \"regular\" | \"bold\" | \"light\"",
+              "name": "weight",
+              "default": "\"regular\"",
+              "fieldName": "weight"
+            },
+            {
+              "type": {
+                "text": "CondensedHeadingRenderTag | undefined"
+              },
+              "description": "Render tag override: semantic heading by default, or \"div\" | \"span\" for typography-only usage.",
+              "name": "as",
+              "fieldName": "as"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-condensed-heading",
+          "customElement": true,
+          "summary": "Renders token-backed condensed heading text for h1 and h2 display scales."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeCondensedHeading",
+          "declaration": {
+            "name": "HpeCondensedHeading",
+            "module": "foundation/hpe-typography/hpe-condensed-heading/hpe-condensed-heading.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-condensed-heading",
+          "declaration": {
+            "name": "HpeCondensedHeading",
+            "module": "foundation/hpe-typography/hpe-condensed-heading/hpe-condensed-heading.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "foundation/hpe-typography/hpe-heading/hpe-heading.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Semantic heading text with token-backed visual sizing for the default heading styles from the Figma typography spec.",
+          "name": "HpeHeading",
+          "cssParts": [
+            {
+              "description": "The rendered heading element",
+              "name": "heading"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Heading content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "level",
+              "type": {
+                "text": "HeadingLevel"
+              },
+              "default": "\"h2\"",
+              "attribute": "level",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "HeadingSize"
+              },
+              "default": "\"auto\"",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "as",
+              "type": {
+                "text": "HeadingRenderTag | undefined"
+              },
+              "attribute": "as",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "resolvedScale",
+              "type": {
+                "text": "\"h1-large\" | HeadingLevel"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "headingClass",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "renderedTag",
+              "type": {
+                "text": "HeadingRenderTag"
+              },
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "renderTag",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "HeadingLevel"
+              },
+              "description": "Semantic heading level: \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"",
+              "name": "level",
+              "default": "\"h2\"",
+              "fieldName": "level"
+            },
+            {
+              "type": {
+                "text": "HeadingSize"
+              },
+              "description": "Visual size: \"auto\" | \"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\" | \"display\"",
+              "name": "size",
+              "default": "\"auto\"",
+              "fieldName": "size"
+            },
+            {
+              "type": {
+                "text": "HeadingRenderTag | undefined"
+              },
+              "description": "Render tag override: semantic heading by default, or \"div\" | \"span\" for typography-only usage.",
+              "name": "as",
+              "fieldName": "as"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-heading",
+          "customElement": true,
+          "summary": "Renders semantic headings with the default heading scale."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeHeading",
+          "declaration": {
+            "name": "HpeHeading",
+            "module": "foundation/hpe-typography/hpe-heading/hpe-heading.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-heading",
+          "declaration": {
+            "name": "HpeHeading",
+            "module": "foundation/hpe-typography/hpe-heading/hpe-heading.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "foundation/hpe-typography/hpe-paragraph/hpe-paragraph.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Paragraph text component covering the paragraph sizes shown in the Figma typography spec.",
+          "name": "HpeParagraph",
+          "cssParts": [
+            {
+              "description": "The paragraph element",
+              "name": "paragraph"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Paragraph content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "ParagraphSize"
+              },
+              "default": "\"md\"",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "as",
+              "type": {
+                "text": "ParagraphRenderTag"
+              },
+              "default": "\"p\"",
+              "attribute": "as",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "ParagraphSize"
+              },
+              "description": "Paragraph size: \"sm\" | \"md\" | \"lg\" | \"disclaimer\"",
+              "name": "size",
+              "default": "\"md\"",
+              "fieldName": "size"
+            },
+            {
+              "type": {
+                "text": "ParagraphRenderTag"
+              },
+              "description": "Render tag override: \"p\" by default, or \"div\" | \"span\" for typography-only usage.",
+              "name": "as",
+              "default": "\"p\"",
+              "fieldName": "as"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hpe-paragraph",
+          "customElement": true,
+          "summary": "Renders token-backed paragraph text with size variants."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HpeParagraph",
+          "declaration": {
+            "name": "HpeParagraph",
+            "module": "foundation/hpe-typography/hpe-paragraph/hpe-paragraph.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hpe-paragraph",
+          "declaration": {
+            "name": "HpeParagraph",
+            "module": "foundation/hpe-typography/hpe-paragraph/hpe-paragraph.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
