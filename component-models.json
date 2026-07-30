@@ -156,10 +156,9 @@
       },
       {
         "component": "text",
-        "name": "tagline",
-        "value": "",
-        "label": "Tagline",
         "valueType": "string",
+        "name": "tagline",
+        "label": "Tagline",
         "multi": false
       }
     ]

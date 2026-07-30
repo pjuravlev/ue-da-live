@@ -8,7 +8,7 @@ function createCard(card) {
     image: { $: 'div:nth-of-type(1) > picture', type: 'html' },
     heading: { $: 'div:nth-of-type(2) > h1' },
     description: { $: 'div:nth-of-type(2) > p', type: 'html' },
-    tagline: { $: 'div:nth-of-type(3) > p', type: 'html' },
+    tagline: { $: 'div:nth-of-type(3) > div', type: 'html' },s
   });
   hpeCard.innerHTML = [
     content.image ? `<hpe-image slot="media" src="${content.image.querySelector('img').src}" alt="Abstract blue glass texture" aspect-ratio="16:9"></hpe-image>` : ``,
