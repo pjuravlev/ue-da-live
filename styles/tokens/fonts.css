@@ -1,0 +1,319 @@
+/**
+
+ * Do not edit directly, this file was auto-generated.
+
+ * English — font declarations for [lang="en"]
+
+ */
+
+
+
+/* ——— HPE Graphik ——— */
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Thin-Web.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-ThinItalic-Web.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Extralight-Web.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-ExtralightItalic-Web.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Light-Web.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-LightItalic-Web.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Regular-Web.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-RegularItalic-Web.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Medium-Web.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-MediumItalic-Web.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Semibold-Web.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-SemiboldItalic-Web.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Bold-Web.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-BoldItalic-Web.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Black-Web.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-BlackItalic-Web.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-Super-Web.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphik-SuperItalic-Web.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ——— HPE Graphik (condensed) ——— */
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Thin-Web.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-ThinItalic-Web.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Extralight-Web.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-ExtralightItalic-Web.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Light-Web.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-LightItalic-Web.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Regular-Web.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-RegularItalic-Web.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Medium-Web.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-MediumItalic-Web.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Semibold-Web.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-SemiboldItalic-Web.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Bold-Web.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-BoldItalic-Web.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Black-Web.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-BlackItalic-Web.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-Super-Web.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: condensed;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HPE Graphik';
+  src: url('https://www.hpe.com/content/dam/hpe/fonts/graphik/HPEGraphikXXCondensed-SuperItalic-Web.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: condensed;
+  font-display: swap;
+}

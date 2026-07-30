@@ -153,6 +153,14 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "tagline",
+        "value": "",
+        "label": "Tagline",
+        "valueType": "string",
+        "multi": false
       }
     ]
   },

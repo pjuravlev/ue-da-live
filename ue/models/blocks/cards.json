@@ -23,7 +23,8 @@
           "fields": [
             { "name": "image", "selector": "div:nth-child(1)>picture>img[src]"},
             { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]"},
-            { "name": "text", "selector": "div:nth-child(2)" }
+            { "name": "text", "selector": "div:nth-child(2)" },
+            { "name": "tagline", "selector": "div:nth-child(3)" }
           ]
         }
       }
@@ -53,6 +54,14 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "tagline",
+          "value": "",
+          "label": "Tagline",
+          "valueType": "string",
+          "multi": false
         }
       ]
     }
